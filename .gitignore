@@ -1,0 +1,14 @@
+# Logs and databases #
+######################
+**/logs
+*.log*
+
+###################
+# PyCharm Related #
+###################
+.ideamisc
+.xml*
+.iml*
+.pyc**/venv
+.idea
+**/venv
