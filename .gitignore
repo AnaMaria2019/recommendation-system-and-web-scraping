@@ -12,3 +12,8 @@
 .pyc**/venv
 .idea
 **/venv
+
+#########
+# Other #
+#########
+Readme.txt
