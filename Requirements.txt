@@ -1,0 +1,9 @@
+numpy
+seaborn
+matplotlib
+scikit-learn
+googletrans
+selenium
+requests
+bs4
+pandas
