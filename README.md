@@ -1,6 +1,6 @@
 # RecSystem_and_WebScraping
 
-pip install -r Requirements.txt
+```pip install -r Requirements.txt```
 
 ### Logic steps:
 
