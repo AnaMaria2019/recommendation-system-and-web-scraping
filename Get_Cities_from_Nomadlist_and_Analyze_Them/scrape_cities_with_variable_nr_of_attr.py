@@ -1,4 +1,4 @@
-import requests
+import cloudscraper
 from selenium import webdriver
 import time
 from bs4 import BeautifulSoup
@@ -118,7 +118,7 @@ bugged_cities = [
     "faisalabad"
 ]
 
-session = requests.Session()
+session = cloudscraper.create_scraper()
 session.max_redirects = 3000
 
 list_of_wanted_features = [
