@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
-with open('Files/analyze_data.json') as js:
+with open('files/analyze_data.json') as js:
     loaded_json = json.load(js)
     city_names = []
     df = pd.DataFrame(columns=[

@@ -4,7 +4,8 @@ import json
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from .cities_wanted_features import selected_cities_features_2
+from scraping_nomadlist.utils.cities_wanted_features import selected_cities_features_2
+from scraping_nomadlist.utils import helper_functions
 
 """
 The scope of this Python script is to extract from nomadlist.com the list of cities which have the features 
@@ -16,52 +17,6 @@ file with them. Then for each Json file we test K-Means Clustering Alg. on the c
 
 In the end, we keep the list that obtains the best clustering of the cities.
 """
-
-
-# START: Helper functions
-def extract_text(s):
-    new_string = ""
-
-    for c in s:
-        if c.isalpha():
-            new_string = new_string + c
-        elif c.isspace():
-            new_string = new_string + c
-
-    return new_string.lstrip()
-
-
-def format_cost(string_cost):
-    new_cost = ''
-
-    for c in string_cost:
-        if c.isdigit():
-            new_cost = new_cost + c
-
-    new_cost = float(new_cost)
-
-    return new_cost
-
-
-def format_temperature(temp):
-    new_temp = 0
-
-    for c in temp:
-        if c.isdigit():
-            new_temp = new_temp * 10 + int(c)
-
-    return new_temp
-
-
-def format_humidity(humidity_text):
-    new_humidity = 0
-
-    for c in humidity_text:
-        if c.isdigit():
-            new_humidity = new_humidity * 10 + int(c)
-
-    return new_humidity
-# END
 
 
 """ Retrieve the Web Page """
@@ -81,7 +36,8 @@ time.sleep(4)
 # Get scroll height
 last_height = driver.execute_script("return document.body.scrollHeight")
 
-while True:
+count = 0
+while count == 2:
     # Scroll down to bottom
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
@@ -93,6 +49,8 @@ while True:
     if new_height == last_height:
         break
     last_height = new_height
+
+    count += 1
 
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 page = driver.page_source
@@ -168,14 +126,14 @@ for city in cities:
 
         for r in rows:
             key = r.find('td', {"class": "key"}).text
-            new_key = extract_text(key)
+            new_key = helper_functions.extract_text(key)
             curr_dict_of_city_features_key["features"].append(new_key)
 
             if new_key == "Cost":
                 cost = r.find('div', {"class": "filling"})
                 if cost:
                     cost = cost.get_text()
-                    cost = format_cost(cost)
+                    cost = helper_functions.format_cost(cost)
                     curr_city_features_key_value["cost"] = cost
                     print("Cost: {}".format(cost))  # float
 
@@ -192,7 +150,7 @@ for city in cities:
                 temperature = r.find('span', {"class": "metric"})
                 if temperature:
                     temperature = temperature.get_text()
-                    temperature = format_temperature(temperature)
+                    temperature = helper_functions.format_temperature(temperature)
                     curr_city_features_key_value["temperature"] = temperature
                     print("Temperature: {}".format(temperature))  # int
 
@@ -200,7 +158,7 @@ for city in cities:
                 humidity = r.find('div', {"class": "filling"})
                 if humidity:
                     humidity = humidity.get_text()
-                    humidity = format_humidity(humidity)
+                    humidity = helper_functions.format_humidity(humidity)
                     curr_city_features_key_value["humidity"] = humidity
                     print("Humidity: {}".format(humidity))  # int
 
@@ -239,5 +197,5 @@ for city in cities:
 
 print("Data: {}".format(data))
 
-with open('Files/temp-1.json', 'w') as outfile:
+with open('files/temp-1.json', 'w') as outfile:
     json.dump(data, outfile)

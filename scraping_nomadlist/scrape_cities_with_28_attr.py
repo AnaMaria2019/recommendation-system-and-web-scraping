@@ -4,7 +4,7 @@ import json
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from .cities_wanted_features import all_28_features
+from .utils.cities_wanted_features import all_28_features
 
 """ Helper functions """
 
@@ -392,5 +392,5 @@ print("Cities which have all the attributes: {}".format(has_all_cities))
 print("Data: {}".format(data))
 
 # Write the cities with max nr of attributes (stored in 'data') in a Json file (for the next step: analayze them)
-with open('Files/analyze_data.json', 'w') as outfile:
+with open('files/analyze_data.json', 'w') as outfile:
     json.dump(data, outfile)
