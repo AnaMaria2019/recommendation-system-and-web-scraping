@@ -49,6 +49,16 @@ def format_temperature(temp):
             new_temp = new_temp * 10 + int(c)
 
     return new_temp
+
+
+def format_humidity(humidity_text):
+    new_humidity = 0
+
+    for c in humidity_text:
+        if c.isdigit():
+            new_humidity = new_humidity * 10 + int(c)
+
+    return new_humidity
 # END
 
 
@@ -185,9 +195,10 @@ for city in cities:
                     print("Temperature: {}".format(temperature))  # int
 
             if new_key == "Humidity now":
-                humidity = r.find('div', {"class": "rating"})
-                if humidity and humidity.has_attr("class"):
-                    humidity = int(humidity["class"][-1][1])
+                humidity = r.find('div', {"class": "filling"})
+                if humidity:
+                    humidity = humidity.get_text()
+                    humidity = format_humidity(humidity)
                     curr_city_features_key_value["humidity"] = humidity
                     print("Humidity: {}".format(humidity))  # int
 
