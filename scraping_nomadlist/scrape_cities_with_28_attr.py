@@ -4,53 +4,7 @@ import json
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from .utils.cities_wanted_features import all_28_features
-
-""" Helper functions """
-
-
-def extract_text(s):
-    new_string = ""
-
-    for c in s:
-        if c.isalpha():
-            new_string = new_string + c
-        elif c.isspace():
-            new_string = new_string + c
-
-    return new_string.lstrip()
-
-
-def string_to_int(s):
-    n = 0
-    for c in s:
-        if c.isdigit():
-            n = n * 10 + int(c)
-
-    return n
-
-
-def format_cost(string_cost):
-    new_cost = ''
-
-    for c in string_cost:
-        if c.isdigit():
-            new_cost = new_cost + c
-
-    new_cost = float(new_cost)
-
-    return new_cost
-
-
-def format_temperature(temp):
-    new_temp = 0
-
-    for c in temp:
-        if c.isdigit():
-            new_temp = new_temp * 10 + int(c)
-
-    return new_temp
-# END
+from scraping_nomadlist.utils.cities_wanted_features import all_28_features
 
 
 """ Json list """
