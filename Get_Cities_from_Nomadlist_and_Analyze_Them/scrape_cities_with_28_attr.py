@@ -1,13 +1,9 @@
 import requests
-import numpy as np
-import sklearn
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-from selenium import webdriver
 import time
-from bs4 import BeautifulSoup
 import json
+
+from selenium import webdriver
+from bs4 import BeautifulSoup
 from .cities_wanted_features import all_28_features
 
 """ Helper functions """

@@ -1,5 +1,6 @@
-from selenium import webdriver
 import time
+
+from selenium import webdriver
 from bs4 import BeautifulSoup
 
 """ Retrieve the Web Page """

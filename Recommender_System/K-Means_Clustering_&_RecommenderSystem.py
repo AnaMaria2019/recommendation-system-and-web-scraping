@@ -1,11 +1,11 @@
 import json
+import math
 import pandas as pd
-
 import matplotlib.pyplot as plt
+
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
-import math
 
 
 def l2_distance(city_1, city_2):

@@ -1,8 +1,9 @@
 import cloudscraper
-from selenium import webdriver
 import time
-from bs4 import BeautifulSoup
 import json
+
+from selenium import webdriver
+from bs4 import BeautifulSoup
 from .cities_wanted_features import selected_cities_features_2
 
 """
@@ -238,5 +239,5 @@ for city in cities:
 
 print("Data: {}".format(data))
 
-with open('Files/test_1.json', 'w') as outfile:
+with open('Files/temp-1.json', 'w') as outfile:
     json.dump(data, outfile)
