@@ -3,6 +3,7 @@ from selenium import webdriver
 import time
 from bs4 import BeautifulSoup
 import json
+from .cities_wanted_features import selected_cities_features_2
 
 """
 The scope of this Python script is to extract from nomadlist.com the list of cities which have the features 
@@ -212,7 +213,7 @@ for city in cities:
             """
 
         has_all = True
-        for feature in list_of_wanted_features:
+        for feature in selected_cities_features_2:
             if feature not in curr_dict_of_city_features_key["features"]:
                 has_all = False
                 break

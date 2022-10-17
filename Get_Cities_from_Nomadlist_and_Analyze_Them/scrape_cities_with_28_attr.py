@@ -8,6 +8,7 @@ from selenium import webdriver
 import time
 from bs4 import BeautifulSoup
 import json
+from .cities_wanted_features import all_28_features
 
 """ Helper functions """
 
@@ -105,35 +106,6 @@ bugged_cities = ["{slug}", "essaouira", "la-paz-mexico",
 session = requests.Session()
 session.max_redirects = 3000
 
-list_of_wanted_attributes = [
-    'Overall Score',
-    'Quality of life score',
-    'Family score',
-    'Cost',
-    'Internet',
-    'Fun',
-    'Temperature now',
-    'Humidity now',
-    'Air quality now',
-    'Safety',
-    'Education level',
-    'English speaking',
-    'Walkability',
-    'Peace',
-    'Traffic safety',
-    'Hospitals',
-    'Happiness',
-    'Nightlife',
-    'Free WiFi in city',
-    'Places to work from',
-    'AC or heating',
-    'Friendly to foreigners',
-    'Freedom of speech',
-    'Racial tolerance',
-    'Female friendly',
-    'LGBTQ friendly',
-    'Startup Score'
-]
 has_all_cities = []
 all_cnt = 0
 
@@ -368,7 +340,7 @@ for city in cities:
                     print("Startup Score: {}".format(startup_score))  # int
 
         has_all = True
-        for attribute in list_of_wanted_attributes:
+        for attribute in all_28_features:
             if ((attribute == "Hospitals") and (attribute not in curr_dict["attributes"]) \
                     and ("Healthcare" not in curr_dict["attributes"])) or (attribute not in curr_dict["attributes"]):
                 has_all = False
@@ -378,7 +350,7 @@ for city in cities:
         print()
         if has_all:
             all_cnt += 1
-            # PUT IN DATA EVERY CITY WHICH HAS ALL THE ATTRIBUTES FROM LIST_OF_WANTED_ATTRIBUTES.
+            # PUT IN DATA EVERY CITY WHICH HAS ALL THE ATTRIBUTES FROM ALL_28_FEATURES.
             # USE THESE CITIES FOR THE CORRELATION AND HEATMAP.
             # CHOOSE THE ATTRIBUTES THAT ARE LESS CORRELATED.
             # TAKE ALL CITIES THAT HAVE THOSE ATTRIBUTES AND MAKE A JSON FOR POPULATING THE DATABASE WITH.
