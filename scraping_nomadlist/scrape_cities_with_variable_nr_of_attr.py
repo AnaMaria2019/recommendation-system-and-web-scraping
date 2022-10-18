@@ -20,7 +20,6 @@ In the end, we keep the list that obtains the best clustering of the cities.
 
 
 """ Retrieve the Web Page """
-
 url = 'https://nomadlist.com/'
 reloads = 200  # set the number of times to reload
 pause = 3      # initial time interval between reloads

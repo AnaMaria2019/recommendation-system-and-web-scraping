@@ -3,8 +3,8 @@ import time
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-""" Retrieve the Web Page """
 
+""" Retrieve the Web Page """
 from_airport = 'BUH'
 to_airport = 'MIL'
 from_date = '2020-11-20'
@@ -53,7 +53,6 @@ def get_data_from_flight(flight):
 
 
 """ Start working with BeautifulSoup """
-
 soup = BeautifulSoup(page, 'html.parser')
 
 # print(soup)
