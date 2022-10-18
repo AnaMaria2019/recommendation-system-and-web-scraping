@@ -12,12 +12,10 @@ data = []
 
 
 """ Retrieve the Web Page """
-
 page_url = 'https://nomadlist.com/'
 cooldown = 3
 firefox = webdriver.Firefox(
-    executable_path=
-    "\\1_Ana\\3_Info\\11_Facultate\\1_Licenta\\Lucrare_de_Licenta\\1_Aplicatie\\RecSystem_and_WebScraping\\geckodriver.exe"
+    executable_path='../geckodriver.exe'
 )
 get_height_string = "return document.body.scrollHeight"
 scroll_command_string = "window.scrollTo(0, document.body.scrollHeight);"
