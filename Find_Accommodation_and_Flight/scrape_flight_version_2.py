@@ -15,8 +15,7 @@ pause = 1.5    # initial time interval between reloads
 opts = webdriver.FirefoxOptions()
 opts.headless = True
 driver = webdriver.Firefox(
-    executable_path=
-    "\\1_Ana\\3_Info\\11_Facultate\\1_Licenta\\Lucrare_de_Licenta\\1_Aplicatie\\RecSystem_and_WebScraping\\geckodriver.exe"
+    executable_path='../geckodriver.exe'
 )
 
 # Load Momondo.ro page

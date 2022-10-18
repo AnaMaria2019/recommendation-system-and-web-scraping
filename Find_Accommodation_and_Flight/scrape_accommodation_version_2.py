@@ -83,8 +83,7 @@ url = 'https://www.booking.com/'
 opts = webdriver.FirefoxOptions()
 # opts.headless = True
 driver = webdriver.Firefox(
-    executable_path=
-    'D:\\1_Ana\\3_Info\\11_Facultate\\1_Licenta\\Lucrare_de_Licenta\\1_Aplicatie\\RecSystem_and_WebScraping\\geckodriver.exe'
+    executable_path='../geckodriver.exe'
 )
 driver.get(url)
 

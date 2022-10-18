@@ -44,8 +44,7 @@ with open('Files/fixture_1.json') as js:
 """ Retrieve the page which contains all the IATA Codes of all the airports """
 url = 'https://www.nationsonline.org/oneworld/IATA_Codes/airport_code_list.htm'
 driver = webdriver.Firefox(
-    executable_path=
-    "\\1_Ana\\3_Info\\11_Facultate\\1_Licenta\\Lucrare_de_Licenta\\1_Aplicatie\\RecSystem_and_WebScraping\\geckodriver.exe"
+    executable_path='../geckodriver.exe'
 )
 driver.get(url)
 

@@ -25,8 +25,7 @@ url = 'https://nomadlist.com/'
 reloads = 200  # set the number of times to reload
 pause = 3      # initial time interval between reloads
 driver = webdriver.Firefox(
-    executable_path=
-    "\\1_Ana\\3_Info\\11_Facultate\\1_Licenta\\Lucrare_de_Licenta\\1_Aplicatie\\RecSystem_and_WebScraping\\geckodriver.exe"
+    executable_path='../geckodriver.exe'
 )
 
 # Load Nomad list page and click to view all results
