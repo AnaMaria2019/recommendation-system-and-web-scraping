@@ -5,6 +5,7 @@ import json
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from scraping_nomadlist.utils.cities_wanted_features import all_28_features
+from scraping_nomadlist.utils import helper_functions
 
 
 """ Json list """
@@ -40,7 +41,6 @@ firefox.close()
 
 
 """ Start working with BeautifulSoup """
-
 soup = BeautifulSoup(nomad_page, 'html.parser')
 city_list = soup.find('ul', {"class": "grid"})
 cities = city_list.find_all('li', {"data-type": "city"})[:-1]
@@ -60,14 +60,14 @@ all_cnt = 0
 cnt = 0
 list_of_dicts_attributes = []
 for city in cities:
-    print("City Name: {}".format(city["data-slug"]))
+    print(f"City Name: {city['data-slug']}")
 
     curr_city = city["data-slug"]
     if curr_city in bugged_cities:
         continue
 
     city_url = 'https://nomadlist.com/' + curr_city + '/'
-    print("City URL: {}".format(city_url))
+    print(f'City URL: {city_url}')
     city_response = session.get(city_url)
     city_page = city_response.content
 
@@ -85,7 +85,7 @@ for city in cities:
         curr_dict = list_of_dicts_attributes[cnt - 1]
         for r in rows:
             key = r.find('td', {"class": "key"}).text
-            new_key = extract_text(key)
+            new_key = helper_functions.extract_text(key)
             curr_dict["attributes"].append(new_key)
 
             if new_key == "Overall Score":
@@ -94,198 +94,198 @@ for city in cities:
                 if overall_score:
                     overall_score = float(overall_score)
                     attributes["overall_score"] = overall_score
-                    print("Overall Score: {}".format(overall_score))  # float
+                    print(f'Overall Score: {overall_score}')  # float
 
             if new_key == "Nomad Score":
                 nomad_score = r.find('div', {"class": "filling"}).find('span', recursive=False).text
                 if nomad_score:
                     nomad_score = float(nomad_score)
                     attributes["nomad_score"] = nomad_score
-                    print("Nomad Score: {}".format(nomad_score))  # float
+                    print(f'Nomad Score: {nomad_score}')  # float
 
             if new_key == "Quality of life score":
                 quality_of_life_score = r.find('div', {"class": "rating"})
                 if quality_of_life_score and quality_of_life_score.has_attr("data-value"):
                     quality_of_life_score = int(quality_of_life_score["data-value"][0])
                     attributes["quality_of_life_score"] = quality_of_life_score
-                    print("Quality of Life Score: {}".format(quality_of_life_score))  # int
+                    print(f'Quality of Life Score: {quality_of_life_score}')  # int
 
             if new_key == "Family score":
                 family_score = r.find('div', {"class": "rating"})
                 if family_score and family_score.has_attr("data-value"):
                     family_score = int(family_score["data-value"][0])
                     attributes["family_score"] = family_score
-                    print("Family Score: {}".format(family_score))  # int
+                    print(f'Family Score: {family_score}')  # int
 
             if new_key == "Cost":
                 cost = r.find('div', {"class": "filling"})
                 if cost:
                     cost = cost.get_text()
-                    cost = format_cost(cost)
+                    cost = helper_functions.format_cost(cost)
                     attributes["cost"] = cost
-                    print("Cost: {}".format(cost))  # float
+                    print(f'Cost: {cost}')  # float
 
             if new_key == "Internet":
                 internet = r.find('div', {"class": "rating"})
                 if internet and internet.has_attr("class"):
                     internet = int(internet["class"][-1][1])
                     attributes["internet"] = internet
-                    print("Internet: {}".format(internet))  # int
+                    print(f'Internet: {internet}')  # int
 
             if new_key == "Fun":
                 fun = r.find('div', {"class": "rating"})
                 if fun and fun.has_attr("data-value"):
                     fun = int(fun["data-value"][0])
                     attributes["fun"] = fun
-                    print("Fun: {}".format(fun))  # int
+                    print(f'Fun: {fun}')  # int
 
             if new_key == "Temperature now":
                 temperature = r.find('span', {"class": "metric"})
                 if temperature:
                     temperature = temperature.get_text()
-                    temperature = format_temperature(temperature)
+                    temperature = helper_functions.format_temperature(temperature)
                     attributes["temperature"] = temperature
-                    print("Temperature: {}".format(temperature))  # int
+                    print(f'Temperature: {temperature}')  # int
 
             if new_key == "Humidity now":
                 humidity = r.find('div', {"class": "rating"})
                 if humidity and humidity.has_attr("class"):
                     humidity = int(humidity["class"][-1][1])
                     attributes["humidity"] = humidity
-                    print("Humidity: {}".format(humidity))  # int
+                    print(f'Humidity: {humidity}')  # int
 
             if new_key == "Air quality now":
                 air_quality = r.find('div', {"class": "rating"})
                 if air_quality and air_quality.has_attr("class"):
                     air_quality = int(air_quality["class"][-1][1])
                     attributes["air_quality"] = air_quality
-                    print("Air Quality: {}".format(air_quality))  # int
+                    print(f'Air Quality: {air_quality}')  # int
 
             if new_key == "Safety":
                 safety = r.find('div', {"class": "rating"})
                 if safety and safety.has_attr("class"):
                     safety = int(safety["class"][-1][1])
                     attributes["safety"] = safety
-                    print("Safety: {}".format(safety))  # int
+                    print(f'Safety: {safety}')  # int
 
             if new_key == "Education level":
                 education_level = r.find('div', {"class": "rating"})
                 if education_level and education_level.has_attr("data-value"):
                     education_level = int(education_level["data-value"][0])
                     attributes["education_level"] = education_level
-                    print("Education Level: {}".format(education_level))  # int
+                    print(f'Education Level: {education_level}')  # int
 
             if new_key == "English speaking":
                 english_speaking = r.find('div', {"class": "rating"})
                 if english_speaking and english_speaking.has_attr("data-value"):
                     english_speaking = int(english_speaking["data-value"][0])
                     attributes["english_speaking"] = english_speaking
-                    print("English Speaking: {}".format(english_speaking))  # int
+                    print(f'English Speaking: {english_speaking}')  # int
 
             if new_key == "Walkability":
                 walkability = r.find('div', {"class": "rating"})
                 if walkability and walkability.has_attr("data-value"):
                     walkability = int(walkability["data-value"][0])
                     attributes["walkability"] = walkability
-                    print("Walkability: {}".format(walkability))  # int
+                    print(f'Walkability: {walkability}')  # int
 
             if new_key == "Peace":
                 peace = r.find('div', {"class": "rating"})
                 if peace and peace.has_attr("data-value"):
                     peace = int(peace["data-value"][0])
                     attributes["peace"] = peace
-                    print("Peace: {}".format(peace))  # int
+                    print(f'Peace: {peace}')  # int
 
             if new_key == "Traffic safety":
                 traffic_safety = r.find('div', {"class": "rating"})
                 if traffic_safety and traffic_safety.has_attr("data-value"):
                     traffic_safety = int(traffic_safety["data-value"][0])
                     attributes["traffic_safety"] = traffic_safety
-                    print("Traffic Safety: {}".format(traffic_safety))  # int
+                    print(f'Traffic Safety: {traffic_safety}')  # int
 
             if new_key == "Hospitals" or new_key == "Healthcare":
                 hospitals = r.find('div', {"class": "rating"})
                 if hospitals and hospitals.has_attr("data-value"):
                     hospitals = int(hospitals["data-value"][0])
                     attributes["hospitals"] = hospitals
-                    print("Hospitals: {}".format(hospitals))  # int
+                    print(f'Hospitals: {hospitals}')  # int
 
             if new_key == "Happiness":
                 happiness = r.find('div', {"class": "rating"})
                 if happiness and happiness.has_attr("data-value"):
                     happiness = int(happiness["data-value"][0])
                     attributes["happiness"] = happiness
-                    print("Happiness: {}".format(happiness))  # int
+                    print(f'Happiness: {happiness}')  # int
 
             if new_key == "Nightlife":
                 nightlife = r.find('div', {"class": "rating"})
                 if nightlife and nightlife.has_attr("data-value"):
                     nightlife = int(nightlife["data-value"][0])
                     attributes["nightlife"] = nightlife
-                    print("Nightlife: {}".format(nightlife))  # int
+                    print(f'Nightlife: {nightlife}')  # int
 
             if new_key == "Free WiFi in city":
                 free_wifi = r.find('div', {"class": "rating"})
                 if free_wifi and free_wifi.has_attr("data-value"):
                     free_wifi = int(free_wifi["data-value"][0])
                     attributes["free_wifi"] = free_wifi
-                    print("Free Wifi: {}".format(free_wifi))  # int
+                    print(f'Free Wifi: {free_wifi}')  # int
 
             if new_key == "Places to work from":
                 places_to_work = r.find('div', {"class": "rating"})
                 if places_to_work and places_to_work.has_attr("data-value"):
                     places_to_work = int(places_to_work["data-value"][0])
                     attributes["places_to_work"] = places_to_work
-                    print("Placess to Work: {}".format(places_to_work))  # int
+                    print(f'Placess to Work: {places_to_work}')  # int
 
             if new_key == "AC or heating":
                 ac_heating = r.find('div', {"class": "rating"})
                 if ac_heating and ac_heating.has_attr("data-value"):
                     ac_heating = int(ac_heating["data-value"][0])
                     attributes["ac_heating"] = ac_heating
-                    print("A/C or Heating: {}".format(ac_heating))  # int
+                    print(f'A/C or Heating: {ac_heating}')  # int
 
             if new_key == "Friendly to foreigners":
                 friendly_for_foreigners = r.find('div', {"class": "rating"})
                 if friendly_for_foreigners and friendly_for_foreigners.has_attr("data-value"):
                     friendly_for_foreigners = int(friendly_for_foreigners["data-value"][0])
                     attributes["friendly_for_foreigners"] = friendly_for_foreigners
-                    print("Friendly for Foreigners: {}".format(friendly_for_foreigners))  # int
+                    print(f'Friendly for Foreigners: {friendly_for_foreigners}')  # int
 
             if new_key == "Freedom of speech":
                 freedom_of_speech = r.find('div', {"class": "rating"})
                 if freedom_of_speech and freedom_of_speech.has_attr("data-value"):
                     freedom_of_speech = int(freedom_of_speech["data-value"][0])
                     attributes["freedom_of_speech"] = freedom_of_speech
-                    print("Freedom of Speech: {}".format(freedom_of_speech))  # int
+                    print(f'Freedom of Speech: {freedom_of_speech}')  # int
 
             if new_key == "Racial tolerance":
                 racial_tolerance = r.find('div', {"class": "rating"})
                 if racial_tolerance and racial_tolerance.has_attr("data-value"):
                     racial_tolerance = int(racial_tolerance["data-value"][0])
                     attributes["racial_tolerance"] = racial_tolerance
-                    print("Racial Tolerance: {}".format(racial_tolerance))  # int
+                    print(f'Racial Tolerance: {racial_tolerance}')  # int
 
             if new_key == "Female friendly":
                 female_friendly = r.find('div', {"class": "rating"})
                 if female_friendly and female_friendly.has_attr("data-value"):
                     female_friendly = int(female_friendly["data-value"][0])
                     attributes["female_friendly"] = female_friendly
-                    print("Female Friendly: {}".format(female_friendly))  # int
+                    print(f'Female Friendly: {female_friendly}')  # int
 
             if new_key == "LGBTQ friendly":
                 lgbt_friendly = r.find('div', {"class": "rating"})
                 if lgbt_friendly and lgbt_friendly.has_attr("data-value"):
                     lgbt_friendly = int(lgbt_friendly["data-value"][0])
                     attributes["lgbt_friendly"] = lgbt_friendly
-                    print("LGBTQ Friendly: {}".format(lgbt_friendly))  # int
+                    print(f'LGBTQ Friendly: {lgbt_friendly}')  # int
 
             if new_key == "Startup Score":
                 startup_score = r.find('div', {"class": "rating"})
                 if startup_score and startup_score.has_attr("data-value"):
                     startup_score = int(startup_score["data-value"][0])
                     attributes["startup_score"] = startup_score
-                    print("Startup Score: {}".format(startup_score))  # int
+                    print(f'Startup Score: {startup_score}')  # int
 
         has_all = True
         for attribute in all_28_features:
@@ -334,14 +334,14 @@ for city in cities:
             curr_dict_1["fields"]["lgbt_friendly"] = attributes["lgbt_friendly"]
             curr_dict_1["fields"]["startup_score"] = attributes["startup_score"]
 
-        # print("City: {}".format(curr_city))
-        # print("Attributes: {}".format(curr_dict["attributes"]))
+        # print(f'City: {curr_city}')
+        # print(f"Attributes: {curr_dict['attributes']}")
 
 
 print(has_all_cities)
 print(data)
-print("Cities which have all the attributes: {}".format(has_all_cities))
-print("Data: {}".format(data))
+print(f'Cities which have all the attributes: {has_all_cities}')
+print(f'Data: {data}')
 
 # Write the cities with max nr of attributes (stored in 'data') in a Json file (for the next step: analayze them)
 with open('files/analyze_data.json', 'w') as outfile:

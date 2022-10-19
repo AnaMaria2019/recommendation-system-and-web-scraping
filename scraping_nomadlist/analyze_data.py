@@ -121,7 +121,7 @@ with open('files/analyze_data.json') as js:
     for ncl in ncl_list:
         km = KMeans(n_clusters=ncl, random_state=42).fit(X_scaled)
         sil_score = silhouette_score(X_scaled, km.labels_)
-        print("Silhouette score is {} for {} clusters".format(sil_score, ncl))
+        print(f'Silhouette score is {sil_score} for {ncl} clusters')
         print()
 
         if sil_score > best_score:
@@ -131,7 +131,7 @@ with open('files/analyze_data.json') as js:
     city_clusters = {}
     in_cluster = {}
 
-    print("Best silhouette score is {} for {} clusters".format(best_score, best_ncl))  # Not so good!
+    print(f'Best silhouette score is {best_score} for {best_ncl} clusters')  # Not so good!
     km = KMeans(n_clusters=best_ncl, random_state=42).fit(X_scaled)
 
     for i in range(len(city_names)):
@@ -147,7 +147,7 @@ with open('files/analyze_data.json') as js:
     clusters = []
     for ind in range(best_ncl):
         clusters.append({"cluster_id": ind, "cities": []})
-        # print("Cluster {}:".format(ind + 1))
+        # print(f'Cluster {ind + 1}:')
 
         for i in range(len(city_names)):
             if km.labels_[i] == ind:
@@ -155,15 +155,15 @@ with open('files/analyze_data.json') as js:
                 # print(city_names[i])
         # print()
 
-    print("Clusters list: {}".format(clusters))
+    print(f'Clusters list: {clusters}')
 
     cities_to_explore = ['phuket', 'london', 'florence', 'bangkok', 'dubai', 'paris']
 
     for city in cities_to_explore:
-        print("Analysis for {} city:".format(city))
+        print(f'Analysis for {city} city:')
         ind = in_cluster[city]
         print()
-        print("{}'s cluster is :".format(city))
+        print(f"{city}'s cluster is :")
 
         neighbour_cities = city_clusters[ind]
         for neigh in neighbour_cities:
@@ -175,7 +175,7 @@ with open('files/analyze_data.json') as js:
     ind = 0
     for key in city_clusters:
         ind += 1
-        print("Cluster nr.{}:".format(ind))
+        print(f'Cluster nr.{ind}:')
 
         city_group = city_clusters[key]
         for city in city_group:

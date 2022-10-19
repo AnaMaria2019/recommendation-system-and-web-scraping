@@ -249,8 +249,7 @@ for i in range(2):
 
                 if attributes_found == 4:
                     nr += 1
-                    print("Accommodation {}: name - {}, price - {}, score - {}".format(
-                        nr, accommodation['name'], accommodation['price'], accommodation['score']))
+                    print(f"Accommodation {nr}: name - {accommodation['name']}, price - {accommodation['price']}, score - {accommodation['score']}")
 
                 accommodations.append(accommodation)
 

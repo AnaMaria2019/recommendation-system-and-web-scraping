@@ -35,7 +35,7 @@ with open("../Get_Cities_from_Nomadlist_and_Analyze_Them/Files/test_1.json") as 
         df.loc[i] = pandas_line
         i += 1
 
-    print("List of city names: {}".format(city_names))
+    print(f'List of city names: {city_names}')
 
     X = df.values
     X_scaled = MinMaxScaler().fit_transform(X)

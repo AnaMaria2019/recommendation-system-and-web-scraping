@@ -34,8 +34,7 @@ time.sleep(4)
 # Get scroll height
 last_height = driver.execute_script("return document.body.scrollHeight")
 
-count = 0
-while count == 2:
+while True:
     # Scroll down to bottom
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
@@ -47,8 +46,6 @@ while count == 2:
     if new_height == last_height:
         break
     last_height = new_height
-
-    count += 1
 
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 page = driver.page_source
@@ -98,14 +95,14 @@ cities_names = []
 list_of_dicts_of_city_features = []
 cnt = 0
 for city in cities:
-    curr_city = city["data-slug"]
-    print("City Name: {}".format(city["data-slug"]))
+    curr_city = city['data-slug']
+    print(f"City Name: {city['data-slug']}")
 
     if curr_city in bugged_cities:
         continue
 
     city_url = 'https://nomadlist.com/' + curr_city + '/'
-    print("City URL: {}".format(city_url))
+    print(f'City URL: {city_url}')
     city_response = session.get(city_url)
     city_page = city_response.content
 
@@ -133,7 +130,7 @@ for city in cities:
                     cost = cost.get_text()
                     cost = helper_functions.format_cost(cost)
                     curr_city_features_key_value["cost"] = cost
-                    print("Cost: {}".format(cost))  # float
+                    print(f'Cost: {cost}')  # float
 
             """
             if new_key == "Fun":
@@ -141,7 +138,7 @@ for city in cities:
                 if fun and fun.has_attr("data-value"):
                     fun = int(fun["data-value"][0])
                     curr_city_features_key_value["fun"] = fun
-                    print("Fun: {}".format(fun))  # int
+                    print(f'Fun: {fun}')  # int
             """
 
             if new_key == "Temperature now":
@@ -150,7 +147,7 @@ for city in cities:
                     temperature = temperature.get_text()
                     temperature = helper_functions.format_temperature(temperature)
                     curr_city_features_key_value["temperature"] = temperature
-                    print("Temperature: {}".format(temperature))  # int
+                    print(f'Temperature: {temperature}')  # int
 
             if new_key == "Humidity now":
                 humidity = r.find('div', {"class": "filling"})
@@ -158,7 +155,7 @@ for city in cities:
                     humidity = humidity.get_text()
                     humidity = helper_functions.format_humidity(humidity)
                     curr_city_features_key_value["humidity"] = humidity
-                    print("Humidity: {}".format(humidity))  # int
+                    print(f'Humidity: {humidity}')  # int
 
             """
             if new_key == "Walkability":
@@ -166,7 +163,7 @@ for city in cities:
                 if walkability and walkability.has_attr("data-value"):
                     walkability = int(walkability["data-value"][0])
                     curr_city_features_key_value["walkability"] = walkability
-                    print("Walkability: {}".format(walkability))  # int
+                    print(f'Walkability: {walkability}')  # int
             """
 
         has_all = True
@@ -179,7 +176,7 @@ for city in cities:
             has_all_cnt += 1
             # PUT IN DATA EVERY CITY WHICH HAS ALL THE ATTRIBUTES FROM WANTED_ATTRIBUTES.
             # FROM DATA A JSON FILE WILL BE CREATED FOR POPULATING THE APPLICATION'S DATABASE WITH.
-            print("City: {}".format(curr_city))
+            print(f'City: {curr_city}')
             data.append({"model": "app.city", "pk": has_all_cnt, "fields": {}})
             curr_dict_1 = data[has_all_cnt - 1]
 
@@ -190,10 +187,10 @@ for city in cities:
             # curr_dict_1["fields"]["walkability"] = curr_city_features_key_value["walkability"]
             curr_dict_1["fields"]["city"] = curr_city
 
-        # print("City: {}".format(curr_city))
-        # print("Features: {}".format(curr_dict_of_city_features_key["features"]))
+        # print(f'City: {curr_city}')
+        # print(f"Features: {curr_dict_of_city_features_key['features']}")
 
-print("Data: {}".format(data))
+print(f'Data: {data}')
 
 with open('files/temp-1.json', 'w') as outfile:
     json.dump(data, outfile)

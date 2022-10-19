@@ -91,7 +91,7 @@ with open(json_for_test_1) as js:
         df.loc[i] = pandas_line
         i += 1
 
-    print("List of city names: {}".format(city_names))
+    print(f'List of city names: {city_names}')
     print()
     # print(df)
 
@@ -119,10 +119,10 @@ with open(json_for_test_1) as js:
 
     nr_perechi = (len(X_scaled) * (len(X_scaled) - 1)) / 2
     mean_val /= nr_perechi
-    print("Valoarea minima l2: {}, Valoarea maxima l2: {}, Valoarea medie l2: {}".format(min_val, max_val, mean_val))
+    print(f'Valoarea minima l2: {min_val}, Valoarea maxima l2: {max_val}, Valoarea medie l2: {mean_val}')
 
     mean_cost = sum([city[0] for city in X_scaled]) / len(X_scaled)
-    print("Valoarea minima cost: {}, Valoarea maxima cost: {}, Valoarea medie cost: {}".format(0, 1, mean_cost))
+    print(f'Valoarea minima cost: {0}, Valoarea maxima cost: {1}, Valoarea medie cost: {mean_cost}')
     print()
 
     """ Calculate the best number of clusters """
@@ -135,7 +135,7 @@ with open(json_for_test_1) as js:
         km = KMeans(n_clusters=ncl, random_state=42).fit(X_scaled)
         sil_score = silhouette_score(X_scaled, km.labels_)
         y_values.append(sil_score)
-        print("Silhouette score is {} for {} clusters".format(sil_score, ncl))
+        print(f'Silhouette score is {sil_score} for {ncl} clusters')
 
         if sil_score > best_score:
             best_score = sil_score
@@ -153,7 +153,7 @@ with open(json_for_test_1) as js:
     city_clusters = {}
     in_cluster = {}
 
-    print("Best silhouette score is {} for {} clusters".format(best_score, best_ncl))
+    print(f'Best silhouette score is {best_score} for {best_ncl} clusters')
     print()
     km = KMeans(n_clusters=best_ncl, random_state=42).fit(X_scaled)
 
@@ -172,7 +172,7 @@ with open(json_for_test_1) as js:
 
     for ind in range(best_ncl):
         clusters.append({"cluster_id": ind, "cities": []})
-        print("Cluster {}:".format(ind + 1))
+        print(f'Cluster {ind + 1}:')
 
         for i in range(len(city_names)):
             if km.labels_[i] == ind:
@@ -219,10 +219,10 @@ with open(json_for_test_1) as js:
     for city in cities_to_explore:
         curr_X_city = X_scaled[city_ind[city]]  # Take the characteristics values of the city searched by the user
         curr_cost = curr_X_city[0]
-        print("Analysis for {} city:".format(city))
+        print(f'Analysis for {city} city:')
         ind = in_cluster[city]  # The current city's cluster id (current city = city searched by the user)
         print()
-        print("{}'s cluster is :".format(city))
+        print(f"{city}'s cluster is :")
 
         neighbour_cities = city_clusters[ind]
         for neigh in neighbour_cities:
@@ -254,7 +254,7 @@ with open(json_for_test_1) as js:
             # si cel al orasului recomandat pentru a gasi oferte cat mai apropiate
             score += 1.3 * (neigh_cost - curr_cost)
 
-            print("Score for {} is : {}".format(neigh, score))
+            print(f'Score for {neigh} is : {score}')
 
             score_list.append((neigh, score))
 

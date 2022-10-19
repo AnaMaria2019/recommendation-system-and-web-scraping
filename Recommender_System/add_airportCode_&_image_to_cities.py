@@ -104,7 +104,7 @@ for div in alphabet_divs:
                 last_td = rows[ind].find_all('td')[-1]
                 airport_code = last_td.get_text()
 
-                # print("Airport: {} has IATA code: {}".format(lower_airport_name, airport_code))
+                # print(f'Airport: {lower_airport_name} has IATA code: {airport_code}')
 
                 for key in cities:
                     only_letters_key = only_letters(key)

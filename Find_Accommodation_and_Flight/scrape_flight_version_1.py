@@ -9,7 +9,7 @@ from_airport = 'BUH'
 to_airport = 'LTN'
 from_date = '2020-11-20'
 to_date = '2020-11-22'
-url = 'https://www.momondo.ro/flight-search/{}-{}/{}/{}?sort=bestflight_a'.format(from_airport, to_airport, from_date, to_date)
+url = f'https://www.momondo.ro/flight-search/{from_airport}-{to_airport}/{from_date}/{to_date}?sort=bestflight_a'
 reloads = 200  # set the number of times to reload
 pause = 1.5    # initial time interval between reloads
 opts = webdriver.FirefoxOptions()
@@ -92,7 +92,7 @@ price_div = curr_flight.find('div', {"class": "col-price result-column"})
 price = price_div.find('span', {"class": "price-text"}).get_text()
 provider = price_div.find('span', {"class": "providerName option-text"}).get_text()
 provider = provider.replace('\n', '')
-print('Price {} using the provider {}'.format(price, provider))
+print(f'Price {price} using the provider {provider}')
 link = price_div.find('a')
 print('Click the link below to book:')
 print("https://www.momondo.ro/" + link['href'])
