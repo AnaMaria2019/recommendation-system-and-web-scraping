@@ -13,7 +13,7 @@ we want to test for the clustering.
 
 After analyzing the data using correlation, 3 potential lists of features for a city that enters in the clustering 
 algorithm were chosen. For each list we extract the cities with that attributes from nomadlist.com and create a Json
-file with them. Then for each Json file we test K-Means Clustering Alg. on the cities contained.
+file with them. Then for each Json file we test K-Means Clustering Alg.
 
 In the end, we keep the list that obtains the best clustering of the cities.
 """

@@ -11,6 +11,7 @@
 .iml*
 .pyc**/venv
 .idea
+**/__pycache__
 **/venv
 
 #########

@@ -1,3 +1,36 @@
+import time
+
+from selenium import webdriver
+
+
+def load_dynamic_page(url, cool_down, browser_driver_path):
+    # Retrieve the Web Page
+    firefox = webdriver.Firefox(
+        executable_path=browser_driver_path
+    )
+    get_height_string = 'return document.body.scrollHeight'
+    scroll_command_string = 'window.scrollTo(0, document.body.scrollHeight);'
+
+    # Gradually loading the dynamic content listed on nomadlist.com
+    firefox.get(url)
+    time.sleep(cool_down)
+    prev_h = firefox.execute_script(get_height_string)
+    check = True
+
+    while check:
+        firefox.execute_script(scroll_command_string)
+        time.sleep(cool_down)
+        curr_h = firefox.execute_script(get_height_string)
+        check = (prev_h != curr_h)
+        prev_h = curr_h
+
+    firefox.execute_script(scroll_command_string)
+    web_page = firefox.page_source
+    firefox.close()
+
+    return web_page
+
+
 def extract_text(s):
     new_string = ""
 
