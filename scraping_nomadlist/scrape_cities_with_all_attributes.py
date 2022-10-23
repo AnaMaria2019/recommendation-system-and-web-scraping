@@ -1,3 +1,13 @@
+"""
+    LOGIC PROCESS:
+        At the end, 'data' will be the list of cities that have all the features present in 'all_features'.
+
+        Next, this list will be exported in a Json file that is used in the process of analyzing the features
+        (looking at the feature correlation using a heatmap), step necessary in order to better choose a set of
+        3 potential city features lists (features that are not correlated with each other) that might fit for
+        the clusterization.
+"""
+
 import cloudscraper
 import json
 
@@ -5,17 +15,6 @@ from bs4 import BeautifulSoup
 from scraping_nomadlist.utils.cities_wanted_features import all_features
 from scraping_nomadlist.utils import helper_functions
 
-
-"""
-    LOGIC PROCESS:
-    
-    At the end, 'data' will be the list of cities that have all the features
-    present in 'all_features'. Next, this list will be exported in a Json file
-    that is used in the process of analyzing the features (looking at the
-    feature correlation using a heatmap), step necessary in order
-    to choose a set of 3 potential city features lists (features that are not correlated
-    with each other) that we consider to better fit in the clusterization.
-"""
 
 if __name__ == '__main__':
     data = []
@@ -31,8 +30,6 @@ if __name__ == '__main__':
     city_list = soup.find('ul', {'class': 'grid'})
     cities = city_list.find_all('li', {'data-type': 'city'})[:-1]
 
-    city_features = []
-    city_names = []
     bugged_cities = [
         '{slug}', 'essaouira', 'la-paz-mexico', 'faisalabad',
         'san-jose-costa-rica', 'la-serena', 'cordoba-spain',
@@ -45,11 +42,10 @@ if __name__ == '__main__':
     cities_with_all_features = []
     city_id = 0
 
-    list_of_dicts_attributes = []
     for city in cities:
-        print(f"City Name: {city['data-slug']}")
-
         curr_city = city['data-slug']
+        print(f"City Name: {curr_city}")
+
         if curr_city in bugged_cities:
             continue
 

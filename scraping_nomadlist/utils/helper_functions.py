@@ -13,13 +13,18 @@ def load_dynamic_page(url, cool_down, browser_driver_path):
 
     # Gradually loading the dynamic content listed on nomadlist.com
     firefox.get(url)
+    # Wait to load page
     time.sleep(cool_down)
+    # Get scroll height
     prev_h = firefox.execute_script(get_height_string)
     check = True
 
     while check:
+        # Scroll down to bottom
         firefox.execute_script(scroll_command_string)
+        # Wait to load page
         time.sleep(cool_down)
+        # Get scroll height
         curr_h = firefox.execute_script(get_height_string)
         check = (prev_h != curr_h)
         prev_h = curr_h

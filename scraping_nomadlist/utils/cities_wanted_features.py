@@ -28,16 +28,23 @@ all_features = [
 ]
 
 selected_cities_features_1 = [
-    'Cost',
-    'Fun',
-    'Temperature now',
-    'Humidity now',
-    'Walkability',
+    'cost',
+    'fun',
+    'temperature',
+    'humidity',
+    'walkability',
 ]
 
 selected_cities_features_2 = [
-    'Cost',
-    'Temperature now',
-    'Humidity now',
+    'cost',
+    'fun',
+    'temperature',
+    'humidity',
+]
+
+selected_cities_features_3 = [
+    'cost',
+    'temperature',
+    'humidity',
 ]
 
