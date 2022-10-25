@@ -6,90 +6,37 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
+from scraping_nomadlist.utils.cities_wanted_features import all_features as city_features
 
 
-with open('files/analyze_data.json') as js:
-    loaded_json = json.load(js)
-    city_names = []
-    df = pd.DataFrame(columns=[
-        'overall_score',
-        'nomad_score',
-        'quality_of_life_score',
-        'family_score',
-        'cost',
-        'internet',
-        'fun',
-        'temperature',
-        'humidity',
-        'air_quality',
-        'safety',
-        'education_level',
-        'english_speaking',
-        'walkability',
-        'peace',
-        'traffic_safety',
-        'hospitals',
-        'happiness',
-        'nightlife',
-        'free_wifi',
-        'places_to_work',
-        'ac_heating',
-        'friendly_for_foreigners',
-        'freedom_of_speech',
-        'racial_tolerance',
-        'female_friendly',
-        'lgbt_friendly',
-        'startup_score'
-    ])
+def read_data(file_path):
+    with open(file_path) as js:
+        loaded_json = json.load(js)
+        cities = []
+        dataframe = pd.DataFrame(columns=city_features)
 
-    i = 0
-    num_cols = 28
-    for line in loaded_json:
-        # print(line)
-        pandas_line = []
-        curr_city = line['city']
-        curr_dict = line['fields']
-        # print(curr_dict)
+        pandas_index = 0
+        num_cols = len(city_features)
+        for line in loaded_json:
+            pandas_line = []
+            current_city = line['city']
+            curr_dict = line['fields']
 
-        if len(curr_dict) < num_cols:
-            continue
+            if len(curr_dict) < num_cols:
+                continue
 
-        pandas_line.append(curr_dict['overall_score'])
-        pandas_line.append(curr_dict['nomad_score'])
-        pandas_line.append(curr_dict['quality_of_life_score'])
-        pandas_line.append(curr_dict['family_score'])
-        pandas_line.append(curr_dict['cost'])
-        pandas_line.append(curr_dict['internet'])
-        pandas_line.append(curr_dict['fun'])
-        pandas_line.append(curr_dict['temperature'])
-        pandas_line.append(curr_dict['humidity'])
-        pandas_line.append(curr_dict['air_quality'])
-        pandas_line.append(curr_dict['safety'])
-        pandas_line.append(curr_dict['education_level'])
-        pandas_line.append(curr_dict['english_speaking'])
-        pandas_line.append(curr_dict['walkability'])
-        pandas_line.append(curr_dict['peace'])
-        pandas_line.append(curr_dict['traffic_safety'])
-        pandas_line.append(curr_dict['hospitals'])
-        pandas_line.append(curr_dict['happiness'])
-        pandas_line.append(curr_dict['nightlife'])
-        pandas_line.append(curr_dict['free_wifi'])
-        pandas_line.append(curr_dict['places_to_work'])
-        pandas_line.append(curr_dict['ac_heating'])
-        pandas_line.append(curr_dict['friendly_for_foreigners'])
-        pandas_line.append(curr_dict['freedom_of_speech'])
-        pandas_line.append(curr_dict['racial_tolerance'])
-        pandas_line.append(curr_dict['female_friendly'])
-        pandas_line.append(curr_dict['lgbt_friendly'])
-        pandas_line.append(curr_dict['startup_score'])
+            for feature_name in city_features:
+                pandas_line.append(curr_dict[feature_name])
 
-        city_names.append(curr_city)
-        df.loc[i] = pandas_line
-        i += 1
+            cities.append(current_city)
+            dataframe.loc[pandas_index] = pandas_line
+            pandas_index += 1
 
-    print(df)
-    df_corr = df.corr(method="pearson")
-    print(df_corr)
+        return dataframe, cities
+
+
+def build_correlation_matrix(dataframe):
+    df_correlation = dataframe.corr(method="pearson")
 
     # START: Print HeatMap (correlation matrix)
     fig, ax = plt.subplots()
@@ -97,8 +44,14 @@ with open('files/analyze_data.json') as js:
     fig.set_size_inches(13, 8)
     cbar_ax = fig.add_axes([.92, .3, .02, .4])
     sns.set(font_scale=0.7)
-    heat_map = sns.heatmap(df_corr, ax=ax, cbar_ax=cbar_ax, xticklabels=df_corr.columns, yticklabels=df_corr.columns,\
-                           annot=True)
+    heat_map = sns.heatmap(
+        df_correlation,
+        ax=ax,
+        cbar_ax=cbar_ax,
+        xticklabels=df_correlation.columns,
+        yticklabels=df_correlation.columns,
+        annot=True
+    )
     heat_map.set_xticklabels(
         heat_map.get_xticklabels(),
         rotation=45,
@@ -107,78 +60,99 @@ with open('files/analyze_data.json') as js:
     plt.show()
     # END
 
-    # Clustering the 532 cities with all the 28 attributes to see how good the result is using all the attributes.
-    X = df.values
-    X_scaled = MinMaxScaler().fit_transform(X)
 
-    print(X)
-    print(X_scaled)
-    print(len(X))
-
-    ncl_list = [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+def find_best_nr_of_clusters(X, nr_clusters_to_be_tested):
     best_ncl = -1
     best_score = 0
-    for ncl in ncl_list:
-        km = KMeans(n_clusters=ncl, random_state=42).fit(X_scaled)
-        sil_score = silhouette_score(X_scaled, km.labels_)
+    for ncl in nr_clusters_to_be_tested:
+        km = KMeans(n_clusters=ncl, random_state=42).fit(X)
+        sil_score = silhouette_score(X, km.labels_)
         print(f'Silhouette score is {sil_score} for {ncl} clusters')
-        print()
 
         if sil_score > best_score:
             best_score = sil_score
             best_ncl = ncl
 
-    city_clusters = {}
+    return best_ncl, best_score
+
+
+def build_clustering(X, nr_clusters_to_be_tested):
+    X_scaled = MinMaxScaler().fit_transform(X)
+    print(f'Input data: {X}')
+    print(f'Input data length: {len(X)}')
+    print(f'Scaled input data: {X_scaled}')
+
+    best_nr_clusters, best_score = find_best_nr_of_clusters(
+        X=X_scaled,
+        nr_clusters_to_be_tested=nr_clusters_to_be_tested
+    )
+    print(f'Best silhouette score is {best_score} for {best_nr_clusters} clusters')  # Not so good!
+    # Best silhouette score is 0.1363683821883101 for 20 clusters
+
+    km = KMeans(n_clusters=best_nr_clusters, random_state=42).fit(X_scaled)
+
+    # {cluster_id: list of cities that are part of the cluster with id == cluster_id}
+    cities_clusters = {}
+    # {city_name: corresponding cluster_id}
     in_cluster = {}
 
-    print(f'Best silhouette score is {best_score} for {best_ncl} clusters')  # Not so good!
-    km = KMeans(n_clusters=best_ncl, random_state=42).fit(X_scaled)
-
     for i in range(len(city_names)):
-        curr_cluster = km.labels_[i]
-        curr_city = city_names[i]
+        cluster = km.labels_[i]
+        current_city = city_names[i]
 
-        if curr_cluster not in city_clusters.keys():
-            city_clusters[curr_cluster] = []
+        if cluster not in cities_clusters.keys():
+            cities_clusters[cluster] = []
 
-        city_clusters[curr_cluster].append(curr_city)
-        in_cluster[curr_city] = curr_cluster
+        cities_clusters[cluster].append(current_city)
+        in_cluster[current_city] = cluster
 
-    clusters = []
-    for ind in range(best_ncl):
-        clusters.append({"cluster_id": ind, "cities": []})
-        # print(f'Cluster {ind + 1}:')
+    return cities_clusters, in_cluster
 
-        for i in range(len(city_names)):
-            if km.labels_[i] == ind:
-                clusters[ind]["cities"].append(city_names[i])
-                # print(city_names[i])
-        # print()
 
-    print(f'Clusters list: {clusters}')
+def export_clusters(output_file_path, clusters):
+    with open(output_file_path, 'w') as output_obj:
+        for cluster_id in (range(len(clusters))):
+            output_obj.write(f'Cluster {cluster_id}:\n')
 
+            cities_group = clusters[cluster_id]
+            for city in cities_group:
+                output_obj.write(city + '\n')
+
+            output_obj.write('\n\n')
+
+
+def export_cities_clusters(output_file_path, cities_to_explore, clusters, in_cluster):
+    with open(output_file_path, 'w') as output_obj:
+        for city in cities_to_explore:
+            output_obj.write(f'Analysis for {city} city:\n')
+            cluster_idx = in_cluster[city]
+            output_obj.write(f"{city}'s cluster contains the following cities:\n")
+
+            neighbour_cities = clusters[cluster_idx]
+            for neigh in neighbour_cities:
+                output_obj.write(neigh + '\n')
+
+            output_obj.write('\n')
+
+
+if __name__ == '__main__':
+    df, city_names = read_data(file_path='files/analyze_data.json')
+    build_correlation_matrix(dataframe=df)
+
+    # Clustering the 532 cities with all the 28 attributes to see how good the result is using all the attributes.
+    input_data = df.values
+    ncl_list = [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+    city_cluster, city_in_cluster = build_clustering(X=input_data, nr_clusters_to_be_tested=ncl_list)
+
+    # Looking at some cities' cluster to see if the other cities in their
+    # corresponding cluster are similar to them (checking how accurate the clustering is)
     cities_to_explore = ['phuket', 'london', 'florence', 'bangkok', 'dubai', 'paris']
+    export_cities_clusters(
+        output_file_path='files/explorred_cities.txt',
+        cities_to_explore=cities_to_explore,
+        clusters=city_cluster,
+        in_cluster=city_in_cluster
+    )
 
-    for city in cities_to_explore:
-        print(f'Analysis for {city} city:')
-        ind = in_cluster[city]
-        print()
-        print(f"{city}'s cluster is :")
-
-        neighbour_cities = city_clusters[ind]
-        for neigh in neighbour_cities:
-            print(neigh)
-
-        print()
-
-    # Print all clusters and their corresponding cities
-    ind = 0
-    for key in city_clusters:
-        ind += 1
-        print(f'Cluster nr.{ind}:')
-
-        city_group = city_clusters[key]
-        for city in city_group:
-            print(city)
-        print()
-        print()
+    # Write all clusters and their corresponding cities in a text file
+    export_clusters(output_file_path='files/clusters.txt', clusters=city_cluster)
