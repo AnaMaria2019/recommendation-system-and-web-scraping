@@ -25,6 +25,13 @@ from scraping_nomadlist.utils import helper_functions
 
 
 if __name__ == '__main__':
+    if len(city_features) == 5:
+        output_test_file_path = 'files/test-1.json'
+    elif len(city_features) == 4:
+        output_test_file_path = 'files/test-2.json'
+    else:
+        output_test_file_path = 'files/test-3.json'
+
     # List from which a Json file will be created
     data = []
 
@@ -123,6 +130,7 @@ if __name__ == '__main__':
                         curr_city_features[feature_name] = humidity_value
                         print(f'{feature_name}: {humidity_value}')  # int
 
+            print()
             has_all_features = True
             for feature in city_features:
                 if feature not in curr_city_features:
@@ -140,5 +148,5 @@ if __name__ == '__main__':
 
     print(f'Data: {data}')
 
-    with open('files/temp-1.json', 'w') as outfile:
+    with open(output_test_file_path, 'w') as outfile:
         json.dump(data, outfile)
