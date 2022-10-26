@@ -1,4 +1,6 @@
 import time
+import json
+import pandas as pd
 
 from selenium import webdriver
 
@@ -78,3 +80,33 @@ def format_humidity(humidity_text):
             new_humidity = new_humidity * 10 + int(c)
 
     return new_humidity
+
+
+def read_data_from_json(file_path, city_features):
+    with open(file_path) as js:
+        loaded_json = json.load(js)
+        dataframe = pd.DataFrame(columns=city_features)
+
+        cities = []
+        # Dictionary of cities name with their corresponding line index in the pandas matrix
+        line_idx_in_dataframe = {}
+
+        pandas_index = 0
+        num_cols = len(city_features)
+        for line in loaded_json:
+            pandas_line = []
+            current_dict = line['fields']
+            current_city = current_dict['city']
+
+            if len(current_dict) < num_cols + 1:
+                continue
+
+            for feature_name in city_features:
+                pandas_line.append(current_dict[feature_name])
+
+            cities.append(current_city)
+            line_idx_in_dataframe[current_city] = pandas_index
+            dataframe.loc[pandas_index] = pandas_line
+            pandas_index += 1
+
+        return dataframe, cities, line_idx_in_dataframe
