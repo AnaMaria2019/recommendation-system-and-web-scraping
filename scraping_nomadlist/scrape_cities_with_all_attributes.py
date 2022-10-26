@@ -148,14 +148,15 @@ if __name__ == '__main__':
             if has_all_features:
                 city_id += 1
                 cities_with_all_features.append({'city': curr_city, 'url': city_url})
-                data.append({'nr': city_id, 'city': curr_city, 'fields': {}})
+                data.append({'nr': city_id, 'fields': {}})
                 features_dict = data[-1]['fields']
 
+                features_dict['city'] = curr_city
                 for feature_name in all_features:
                     features_dict[feature_name] = curr_city_features[feature_name]
 
     print(f'Cities that have all the attributes: {cities_with_all_features}')
     print(f'Data: {data}')
 
-    with open('files/analyze_data.json', 'w') as outfile:
+    with open('files/analyze-data.json', 'w') as outfile:
         json.dump(data, outfile)
