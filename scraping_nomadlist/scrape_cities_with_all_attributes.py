@@ -87,7 +87,6 @@ if __name__ == '__main__':
             }
             keys_with_div_attr_class_pattern = {
                 'Internet': 'internet',
-                'Humidity now': 'humidity',
                 'Air quality now': 'air_quality',
                 'Safety': 'safety'
             }
@@ -136,6 +135,14 @@ if __name__ == '__main__':
                         temperature_value = helper_functions.format_temperature(temperature_text)
                         curr_city_features[feature_name] = temperature_value
                         print(f'{feature_name}: {temperature_value}')  # int
+
+                if new_key == 'Humidity now':
+                    feature_name = 'humidity'
+                    humidity_text = r.find('div', {'class': 'filling'}).get_text()
+                    if humidity_text:
+                        humidity_value = helper_functions.format_humidity(humidity_text)
+                        curr_city_features[feature_name] = humidity_value
+                        print(f'{feature_name}: {humidity_value}')  # int
 
             has_all_features = True
             for feature in all_features:
