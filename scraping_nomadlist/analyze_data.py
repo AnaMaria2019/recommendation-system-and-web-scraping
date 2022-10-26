@@ -86,8 +86,8 @@ def build_clustering(X, nr_clusters_to_be_tested):
         X=X_scaled,
         nr_clusters_to_be_tested=nr_clusters_to_be_tested
     )
-    print(f'Best silhouette score is {best_score} for {best_nr_clusters} clusters')  # Not so good!
-    # Best silhouette score is 0.1363683821883101 for 20 clusters
+    print(f'Best silhouette score is {best_score} for {best_nr_clusters} clusters')
+    # Best silhouette score is 0.1363683821883101 for 20 clusters - Not so good!
 
     km = KMeans(n_clusters=best_nr_clusters, random_state=42).fit(X_scaled)
 
