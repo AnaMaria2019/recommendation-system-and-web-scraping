@@ -1,0 +1,1935 @@
+[
+    {
+        "cluster_id": 0,
+        "cities": [
+            "chiang-mai",
+            "penang",
+            "da-nang",
+            "siem-reap",
+            "kuching",
+            "merida",
+            "lagos",
+            "kozhikode",
+            "sanur",
+            "malacca",
+            "langkawi",
+            "kalyan",
+            "kolkata",
+            "visakhapatnam",
+            "coimbatore",
+            "makassar",
+            "bhubaneswar",
+            "guayaquil",
+            "georgetown",
+            "maracay",
+            "sao-luis",
+            "george-town"
+        ]
+    },
+    {
+        "cluster_id": 1,
+        "cities": [
+            "almaty",
+            "chisinau",
+            "bedford",
+            "port-arthur",
+            "la-paz",
+            "bossier-city",
+            "guelph",
+            "mamaia",
+            "zhoukou",
+            "kitakyushu",
+            "hiroshima",
+            "addis-ababa"
+        ]
+    },
+    {
+        "cluster_id": 2,
+        "cities": [
+            "porto",
+            "dresden",
+            "auckland",
+            "wellington",
+            "roanoke",
+            "rochester",
+            "burlington",
+            "indianapolis",
+            "raleigh",
+            "conway",
+            "aachen",
+            "terre-haute",
+            "erie",
+            "lafayette",
+            "montreal",
+            "birmingham-al",
+            "grand-rapids",
+            "a-coruna",
+            "lake-como",
+            "nijmegen",
+            "oakland",
+            "nantes",
+            "lynchburg",
+            "harrisonburg",
+            "ghent",
+            "marseille",
+            "winston",
+            "bloomington",
+            "bruges",
+            "bologna",
+            "petaluma",
+            "suzhou",
+            "rouen"
+        ]
+    },
+    {
+        "cluster_id": 3,
+        "cities": [
+            "craiova",
+            "lianyungang",
+            "yantai",
+            "wuhu",
+            "kunshan",
+            "lanzhou",
+            "xuzhou",
+            "nantong",
+            "kamiyama",
+            "sinuiju",
+            "chongjin",
+            "sariwon"
+        ]
+    },
+    {
+        "cluster_id": 4,
+        "cities": [
+            "buenos-aires",
+            "cape-town",
+            "atlanta",
+            "dallas",
+            "port-louis",
+            "valencia",
+            "buffalo",
+            "jeju-island",
+            "christchurch",
+            "jacksonville",
+            "fukuoka",
+            "pittsburgh",
+            "toulouse",
+            "lyon",
+            "nicosia",
+            "mar-del-plata",
+            "rhodes",
+            "nagasaki",
+            "larnaca"
+        ]
+    },
+    {
+        "cluster_id": 5,
+        "cities": [
+            "santa-barbara"
+        ]
+    },
+    {
+        "cluster_id": 6,
+        "cities": [
+            "tirupur",
+            "gujranwala",
+            "djibouti",
+            "juba",
+            "homs"
+        ]
+    },
+    {
+        "cluster_id": 7,
+        "cities": [
+            "tucson",
+            "fresno",
+            "qom",
+            "quetta",
+            "shiraz",
+            "sanaa",
+            "kabul"
+        ]
+    },
+    {
+        "cluster_id": 8,
+        "cities": [
+            "odessa-tx",
+            "abilene",
+            "st-george",
+            "college-station",
+            "san-angelo",
+            "vista",
+            "fort-collins",
+            "billings"
+        ]
+    },
+    {
+        "cluster_id": 9,
+        "cities": [
+            "kuala-lumpur",
+            "varkala",
+            "port-harcourt",
+            "bandar-seri-begawan",
+            "onitsha",
+            "putian",
+            "managua",
+            "ko-lipe",
+            "dili",
+            "joao-pessoa",
+            "belize-city",
+            "dar-es-salaam"
+        ]
+    },
+    {
+        "cluster_id": 10,
+        "cities": [
+            "caye-caulker",
+            "byron-bay",
+            "montego-bay"
+        ]
+    },
+    {
+        "cluster_id": 11,
+        "cities": [
+            "bengaluru",
+            "manila",
+            "mostar",
+            "kochi",
+            "huizhou",
+            "aguascalientes",
+            "mataram",
+            "jiangmen",
+            "belo-horizonte",
+            "port-said",
+            "zhanjiang",
+            "zhongshan",
+            "fuzhou",
+            "antananarivo",
+            "huambo",
+            "santa-marta",
+            "vijayawada",
+            "zhuhai",
+            "taichung"
+        ]
+    },
+    {
+        "cluster_id": 12,
+        "cities": [
+            "canggu",
+            "el-gouna",
+            "hagatna",
+            "bocas-del-toro",
+            "san-pedro",
+            "yangon"
+        ]
+    },
+    {
+        "cluster_id": 13,
+        "cities": [
+            "amsterdam",
+            "washington",
+            "boston",
+            "geneva",
+            "zurich",
+            "glasgow",
+            "philadelphia",
+            "oxford",
+            "bern",
+            "haarlem",
+            "texel",
+            "st-gallen"
+        ]
+    },
+    {
+        "cluster_id": 14,
+        "cities": [
+            "seseh",
+            "phnom-penh",
+            "macon",
+            "chittagong",
+            "asuncion",
+            "mui-ne",
+            "dothan",
+            "valdosta",
+            "montgomery",
+            "kollam",
+            "ko-chang",
+            "ao-nang",
+            "barranquilla",
+            "salvador",
+            "lanzarote",
+            "thiruvananthapuram",
+            "sayulita",
+            "manaus"
+        ]
+    },
+    {
+        "cluster_id": 15,
+        "cities": [
+            "san-antonio",
+            "lancaster",
+            "palmdale",
+            "denver",
+            "porterville",
+            "delano",
+            "bakersfield",
+            "casa-grande",
+            "hemet",
+            "phoenix",
+            "granada",
+            "henderson",
+            "yuma"
+        ]
+    },
+    {
+        "cluster_id": 16,
+        "cities": [
+            "vancouver",
+            "waterloo-ia",
+            "davenport",
+            "seattle",
+            "lawrence",
+            "fort-smith",
+            "surrey",
+            "joplin",
+            "kenosha",
+            "rogers",
+            "oregon-city",
+            "st-joseph",
+            "albany",
+            "rockford",
+            "peoria",
+            "iowa-city",
+            "springdale",
+            "olympia",
+            "corvallis",
+            "columbia",
+            "la-crosse",
+            "medford",
+            "dubuque",
+            "appleton",
+            "oshkosh",
+            "bellingham",
+            "eugene",
+            "torshavn"
+        ]
+    },
+    {
+        "cluster_id": 17,
+        "cities": [
+            "hoi-an",
+            "nakhon-ratchasima",
+            "madurai",
+            "malang",
+            "palembang",
+            "pekanbaru",
+            "cirebon",
+            "medan",
+            "ko-samui",
+            "abidjan",
+            "hua-hin",
+            "port-au-prince"
+        ]
+    },
+    {
+        "cluster_id": 18,
+        "cities": [
+            "san-francisco",
+            "chicago",
+            "coventry",
+            "st-louis",
+            "fredericton",
+            "northampton",
+            "adelaide",
+            "hartford",
+            "zwolle",
+            "cambridge",
+            "canberra",
+            "fairfax",
+            "arnhem",
+            "belfast"
+        ]
+    },
+    {
+        "cluster_id": 19,
+        "cities": [
+            "lagos-algarve",
+            "zadar",
+            "ploiesti",
+            "bucharest",
+            "novi-sad",
+            "sarajevo",
+            "rijeka",
+            "burgas",
+            "osijek",
+            "banja-luka",
+            "changshu",
+            "weifang",
+            "san-luis-potosi",
+            "hangzhou",
+            "luoyang",
+            "yichang",
+            "linyi",
+            "shaoxing",
+            "shenyang",
+            "valparaiso",
+            "zhucheng",
+            "kaechon",
+            "tanchon",
+            "ruian",
+            "hamhung",
+            "krasnodar",
+            "odessa"
+        ]
+    },
+    {
+        "cluster_id": 20,
+        "cities": [
+            "lisbon",
+            "kathmandu",
+            "ericeira",
+            "constanta",
+            "busan",
+            "barcelona",
+            "athens",
+            "costa-da-caparica",
+            "tokyo",
+            "florianopolis",
+            "daegu",
+            "hong-kong",
+            "shanghai",
+            "nice",
+            "kobe",
+            "tsushima-island",
+            "kyoto"
+        ]
+    },
+    {
+        "cluster_id": 21,
+        "cities": [
+            "mendoza",
+            "tebessa",
+            "kirkuk",
+            "niamey",
+            "erbil",
+            "san-pedro-de-atacama",
+            "khartoum",
+            "basra"
+        ]
+    },
+    {
+        "cluster_id": 22,
+        "cities": [
+            "montpellier",
+            "rocky-mount",
+            "jackson",
+            "luton",
+            "portsmouth",
+            "gulfport",
+            "waukegan",
+            "pensacola",
+            "normal",
+            "strasbourg",
+            "annecy",
+            "heidelberg",
+            "avignon",
+            "princeton",
+            "jarabacoa",
+            "punta-del-este"
+        ]
+    },
+    {
+        "cluster_id": 23,
+        "cities": [
+            "toronto",
+            "newcastle-upon-tyne",
+            "aberdeen",
+            "edinburgh",
+            "vienna",
+            "bath",
+            "rotterdam",
+            "dublin",
+            "hull",
+            "brussels",
+            "ottawa",
+            "milan",
+            "eindhoven",
+            "dunedin",
+            "ithaca",
+            "cardiff",
+            "norwich",
+            "hobart",
+            "charleston",
+            "portland-me",
+            "elgin",
+            "stamford",
+            "baltimore",
+            "lelystad",
+            "salzburg",
+            "shrewsbury",
+            "lugano",
+            "waterloo",
+            "tuscaloosa",
+            "saint-helier",
+            "basel",
+            "lausanne",
+            "beaverton",
+            "almere",
+            "luxembourg",
+            "brighton",
+            "trier",
+            "verona"
+        ]
+    },
+    {
+        "cluster_id": 24,
+        "cities": [
+            "warsaw",
+            "cluj",
+            "wroclaw",
+            "krakow",
+            "tallinn",
+            "bratislava",
+            "poznan",
+            "leipzig",
+            "lublin",
+            "lodz",
+            "riga",
+            "tashkent",
+            "iasi",
+            "katowice",
+            "decatur",
+            "salem",
+            "graz",
+            "turku",
+            "bogota",
+            "kaunas",
+            "san-cristobal-de-las-casas",
+            "intag-valley",
+            "klaipeda",
+            "el-alto",
+            "bishkek",
+            "chongqing",
+            "pasto",
+            "minsk"
+        ]
+    },
+    {
+        "cluster_id": 25,
+        "cities": [
+            "huddersfield",
+            "salento",
+            "bridgeton",
+            "erlangen",
+            "hof",
+            "salem-ma"
+        ]
+    },
+    {
+        "cluster_id": 26,
+        "cities": [
+            "wichita",
+            "enid",
+            "ashland",
+            "topeka",
+            "sioux-falls",
+            "konya",
+            "kearney",
+            "yakima",
+            "manhattan",
+            "grand-island",
+            "sioux-city",
+            "pasco"
+        ]
+    },
+    {
+        "cluster_id": 27,
+        "cities": [
+            "stockholm",
+            "kansas-city",
+            "malmo",
+            "helsinki",
+            "madison",
+            "abbotsford",
+            "milwaukee",
+            "espoo",
+            "tampere",
+            "cork",
+            "galway",
+            "aarhus",
+            "bergen",
+            "trondheim",
+            "sapporo"
+        ]
+    },
+    {
+        "cluster_id": 28,
+        "cities": [
+            "havana",
+            "mysore",
+            "hubli",
+            "kanpur",
+            "gwalior",
+            "aurangabad",
+            "giza",
+            "rajkot",
+            "durg",
+            "rosario",
+            "sao-jose-dos-campos",
+            "kinmen",
+            "pune",
+            "kotor",
+            "pamplona",
+            "sorocaba",
+            "jundiai",
+            "dhanbad",
+            "foshan",
+            "mecca",
+            "ajaccio"
+        ]
+    },
+    {
+        "cluster_id": 29,
+        "cities": [
+            "bangkok",
+            "gran-canaria",
+            "seminyak",
+            "cebu",
+            "davao",
+            "ho-chi-minh-city",
+            "queretaro",
+            "krabi",
+            "luang-prabang",
+            "jakarta",
+            "colombo",
+            "kota-kinabalu",
+            "guangzhou",
+            "la-union",
+            "pattaya",
+            "jimbaran",
+            "tainan",
+            "thrissur",
+            "nagpur",
+            "fortaleza",
+            "khulna",
+            "natal",
+            "patna",
+            "surat",
+            "alexandria",
+            "cozumel",
+            "thane"
+        ]
+    },
+    {
+        "cluster_id": 30,
+        "cities": [
+            "sydney",
+            "syracuse",
+            "jacksonville-nc",
+            "palm-coast",
+            "hoover",
+            "charlotte",
+            "bradenton",
+            "warner-robins",
+            "apia",
+            "cape-coral",
+            "santa-teresa",
+            "oranjestad",
+            "port-orange",
+            "monza",
+            "noumea",
+            "tabarana-do-norte"
+        ]
+    },
+    {
+        "cluster_id": 31,
+        "cities": [
+            "changzhou",
+            "anyang",
+            "shreveport",
+            "taizhou",
+            "dushanbe",
+            "zhengzhou",
+            "taiyuan",
+            "pyongyang",
+            "chamonix",
+            "okayama"
+        ]
+    },
+    {
+        "cluster_id": 32,
+        "cities": [
+            "oulu",
+            "qiqihar",
+            "fort-mcmurray",
+            "tomsk",
+            "chelyabinsk",
+            "kazan",
+            "samara",
+            "nizhny",
+            "novosibirsk"
+        ]
+    },
+    {
+        "cluster_id": 33,
+        "cities": [
+            "monterrey",
+            "san-diego",
+            "mcallen",
+            "killeen",
+            "mission",
+            "chico",
+            "malaga",
+            "pharr",
+            "cleveland",
+            "edinburg",
+            "palermo",
+            "tianjin",
+            "visalia",
+            "stockton",
+            "tulare",
+            "merced",
+            "yuba-city",
+            "manteca",
+            "redding",
+            "temecula",
+            "murrieta",
+            "cagliari",
+            "medina"
+        ]
+    },
+    {
+        "cluster_id": 34,
+        "cities": [
+            "kano",
+            "ahvaz",
+            "ndjamena",
+            "bamako"
+        ]
+    },
+    {
+        "cluster_id": 35,
+        "cities": [
+            "adana",
+            "fes"
+        ]
+    },
+    {
+        "cluster_id": 36,
+        "cities": [
+            "ranchi",
+            "rishikesh",
+            "hvar",
+            "mancora",
+            "port-vila",
+            "dammam",
+            "bay-islands",
+            "libreville",
+            "cayenne"
+        ]
+    },
+    {
+        "cluster_id": 37,
+        "cities": [
+            "cusco",
+            "jiaxing",
+            "guiyang",
+            "jiamusi",
+            "rzeszow",
+            "zunyi",
+            "ningbo",
+            "nanyang",
+            "fushun",
+            "hefei",
+            "anshan",
+            "nampo",
+            "novocherkassk",
+            "kaliningrad"
+        ]
+    },
+    {
+        "cluster_id": 38,
+        "cities": [
+            "tampa",
+            "dubai",
+            "ocala",
+            "wilmington",
+            "daytona-beach",
+            "bordeaux",
+            "fort-myers",
+            "orlando",
+            "auburn",
+            "melbourne-fl",
+            "savannah",
+            "columbus-ga",
+            "sarasota",
+            "tamarindo",
+            "tallahassee",
+            "road-town",
+            "bari",
+            "bridgetown",
+            "philipsburg"
+        ]
+    },
+    {
+        "cluster_id": 39,
+        "cities": [
+            "galle",
+            "goa",
+            "dakar",
+            "kingston"
+        ]
+    },
+    {
+        "cluster_id": 40,
+        "cities": [
+            "rovaniemi"
+        ]
+    },
+    {
+        "cluster_id": 41,
+        "cities": [
+            "victorville",
+            "hesperia",
+            "pueblo",
+            "apple-valley",
+            "enterprise",
+            "lake-havasu-city"
+        ]
+    },
+    {
+        "cluster_id": 42,
+        "cities": [
+            "urumqi",
+            "omaha",
+            "astana"
+        ]
+    },
+    {
+        "cluster_id": 43,
+        "cities": [
+            "regina",
+            "janesville",
+            "minot",
+            "grand-forks",
+            "spokane-valley",
+            "park-city",
+            "revelstoke",
+            "coeur-dalene",
+            "krasnoyarsk"
+        ]
+    },
+    {
+        "cluster_id": 44,
+        "cities": [
+            "reykjavik",
+            "marysville",
+            "sheffield",
+            "green-bay"
+        ]
+    },
+    {
+        "cluster_id": 45,
+        "cities": [
+            "timisoara",
+            "brasov",
+            "zagreb",
+            "brno",
+            "szczecin",
+            "braga",
+            "tartu",
+            "richmond",
+            "kunming",
+            "xining",
+            "ivano-frankivsk",
+            "krivoy-rog",
+            "rostov-on-don",
+            "kharkiv",
+            "saint-petersburg"
+        ]
+    },
+    {
+        "cluster_id": 46,
+        "cities": [
+            "plantation",
+            "hamilton"
+        ]
+    },
+    {
+        "cluster_id": 47,
+        "cities": [
+            "plovdiv",
+            "mumbai",
+            "cordoba",
+            "izmir",
+            "noida",
+            "lucknow",
+            "jabalpur",
+            "chandigarh",
+            "ludhiana",
+            "meerut",
+            "tangier",
+            "varanasi",
+            "nashik",
+            "peshawar",
+            "campo-grande",
+            "cabo-san-lucas"
+        ]
+    },
+    {
+        "cluster_id": 48,
+        "cities": [
+            "senggigi",
+            "gili-air",
+            "vasai",
+            "leon",
+            "abuja",
+            "sihanoukville",
+            "ko-phi-phi",
+            "funafuti",
+            "honiara",
+            "caracas",
+            "port-moresby",
+            "benghazi",
+            "mogadishu"
+        ]
+    },
+    {
+        "cluster_id": 49,
+        "cities": [
+            "austin",
+            "antalya",
+            "marrakesh",
+            "jodhpur",
+            "los-angeles",
+            "tunis",
+            "gurgaon"
+        ]
+    },
+    {
+        "cluster_id": 50,
+        "cities": [
+            "fuerteventura",
+            "tenerife",
+            "ko-pha-ngan",
+            "ubud",
+            "mallorca",
+            "cancun",
+            "puerto-escondido",
+            "playa-del-carmen",
+            "pokhara",
+            "sao-paulo",
+            "makati",
+            "porto-alegre",
+            "rio-de-janeiro",
+            "menorca",
+            "la-plata",
+            "beirut",
+            "cartagena",
+            "naha",
+            "santo-domingo",
+            "recife"
+        ]
+    },
+    {
+        "cluster_id": 51,
+        "cities": [
+            "alicante",
+            "tehran",
+            "pretoria",
+            "ahmedabad",
+            "luxor",
+            "vadodara",
+            "casablanca",
+            "indore",
+            "salta",
+            "bhopal",
+            "muscat",
+            "kuwait-city"
+        ]
+    },
+    {
+        "cluster_id": 52,
+        "cities": [
+            "mcmurdo-station"
+        ]
+    },
+    {
+        "cluster_id": 53,
+        "cities": [
+            "new-orleans",
+            "nashville",
+            "paris",
+            "sliema",
+            "hilo",
+            "fort-lauderdale",
+            "west-palm-beach",
+            "san-sebastian",
+            "mykonos",
+            "vatican-city"
+        ]
+    },
+    {
+        "cluster_id": 54,
+        "cities": [
+            "madeira",
+            "siargao",
+            "nha-trang",
+            "amed",
+            "yangshuo",
+            "puerto-viejo",
+            "praia",
+            "accra"
+        ]
+    },
+    {
+        "cluster_id": 55,
+        "cities": [
+            "azores",
+            "batumi",
+            "tijuana",
+            "wonsan",
+            "okinawa-city"
+        ]
+    },
+    {
+        "cluster_id": 56,
+        "cities": [
+            "perth",
+            "split",
+            "columbus",
+            "youngstown",
+            "muncie",
+            "louisville",
+            "battle-creek",
+            "conroe",
+            "harlingen",
+            "bowling-green",
+            "victoria-tx",
+            "johnson-city",
+            "kingsport",
+            "asheville",
+            "temple",
+            "windsor",
+            "modesto",
+            "madrid",
+            "fort-wayne",
+            "chania",
+            "greensboro",
+            "turlock",
+            "lansing",
+            "tracy",
+            "thessaloniki",
+            "bryan",
+            "dayton",
+            "knoxville",
+            "fairfield",
+            "lexington",
+            "canton",
+            "lodi",
+            "greenville",
+            "tarifa",
+            "grenoble",
+            "anderson",
+            "osaka",
+            "beersheba",
+            "biarritz",
+            "kagoshima",
+            "bilbao",
+            "nago"
+        ]
+    },
+    {
+        "cluster_id": 57,
+        "cities": [
+            "berlin",
+            "london",
+            "munich",
+            "hamburg",
+            "prague",
+            "vilnius",
+            "melbourne",
+            "copenhagen",
+            "portland",
+            "gothenburg",
+            "leicester",
+            "kitchener",
+            "lille",
+            "bristol",
+            "leeds",
+            "kyiv"
+        ]
+    },
+    {
+        "cluster_id": 58,
+        "cities": [
+            "new-york-city",
+            "honolulu",
+            "miami",
+            "rome",
+            "florence",
+            "monaco",
+            "key-west",
+            "ibiza",
+            "abu-dhabi",
+            "male"
+        ]
+    },
+    {
+        "cluster_id": 59,
+        "cities": [
+            "providence",
+            "sumperk",
+            "new-haven",
+            "ferrara"
+        ]
+    },
+    {
+        "cluster_id": 60,
+        "cities": [
+            "tbilisi",
+            "jonesboro",
+            "beaumont",
+            "north-little-rock",
+            "gwangju",
+            "owensboro",
+            "longview",
+            "evansville",
+            "gori",
+            "elkhart",
+            "huainan",
+            "little-rock",
+            "xi-an",
+            "high-point",
+            "sendai"
+        ]
+    },
+    {
+        "cluster_id": 61,
+        "cities": [
+            "santiago",
+            "tirana",
+            "chatham",
+            "oklahoma-city",
+            "houston",
+            "bodrum",
+            "tangshan",
+            "baoding",
+            "san-jose",
+            "ann-arbor",
+            "rethymno",
+            "changsha",
+            "weihai",
+            "tengzhou",
+            "sochi"
+        ]
+    },
+    {
+        "cluster_id": 62,
+        "cities": [
+            "delhi",
+            "dubrovnik",
+            "brownsville",
+            "el-jadida",
+            "cincinnati",
+            "flint",
+            "lawton",
+            "waco",
+            "wichita-falls",
+            "lahore",
+            "augusta",
+            "patras",
+            "corpus-christi",
+            "ube",
+            "bursa"
+        ]
+    },
+    {
+        "cluster_id": 63,
+        "cities": [
+            "portimao",
+            "oaxaca",
+            "general-santos",
+            "coimbra",
+            "fayetteville",
+            "bandung",
+            "da-lat",
+            "ipoh",
+            "suva",
+            "hue",
+            "curitiba",
+            "puerto-vallarta",
+            "panama-city",
+            "campos-dos-goytacazes",
+            "vitoria",
+            "cali",
+            "kinshasa"
+        ]
+    },
+    {
+        "cluster_id": 64,
+        "cities": [
+            "limassol",
+            "riverside",
+            "marbella"
+        ]
+    },
+    {
+        "cluster_id": 65,
+        "cities": [
+            "casper",
+            "duluth",
+            "verdi",
+            "incline-village",
+            "stanley"
+        ]
+    },
+    {
+        "cluster_id": 66,
+        "cities": [
+            "jaipur",
+            "boumerdas",
+            "zaria",
+            "ouagadougou",
+            "sargodha",
+            "lusaka",
+            "lilongwe"
+        ]
+    },
+    {
+        "cluster_id": 67,
+        "cities": [
+            "quito",
+            "minca",
+            "guatemala-city",
+            "liberia",
+            "puebla",
+            "bucaramanga",
+            "toluca",
+            "panajachel",
+            "san-salvador"
+        ]
+    },
+    {
+        "cluster_id": 68,
+        "cities": [
+            "mountain-view",
+            "cannes",
+            "santorini",
+            "nassau"
+        ]
+    },
+    {
+        "cluster_id": 69,
+        "cities": [
+            "faro",
+            "denpasar",
+            "kuta",
+            "vientiane",
+            "karachi",
+            "mbuji-mayi",
+            "yaounde",
+            "maputo"
+        ]
+    },
+    {
+        "cluster_id": 70,
+        "cities": [
+            "winnipeg",
+            "grande-prairie",
+            "calgary",
+            "saskatoon",
+            "pocatello",
+            "cedar-rapids",
+            "eau-claire",
+            "rochester-mn",
+            "fargo",
+            "st-cloud",
+            "bismarck",
+            "great-falls",
+            "des-moines",
+            "idaho-falls",
+            "helena",
+            "anchorage",
+            "spokane",
+            "sandpoint",
+            "ulaanbaatar",
+            "missoula",
+            "bend",
+            "bozeman",
+            "dorobo",
+            "saratov",
+            "yekaterinburg"
+        ]
+    },
+    {
+        "cluster_id": 71,
+        "cities": [
+            "ankara",
+            "ogden",
+            "hohhot",
+            "jilin",
+            "provo",
+            "zibo",
+            "zhangjiakou"
+        ]
+    },
+    {
+        "cluster_id": 72,
+        "cities": [
+            "kandy",
+            "paramaribo",
+            "matara",
+            "san-juan-del-sur",
+            "douala",
+            "san-ignacio"
+        ]
+    },
+    {
+        "cluster_id": 73,
+        "cities": [
+            "nairobi",
+            "guadalajara",
+            "skopje",
+            "taipei",
+            "kaohsiung",
+            "seville",
+            "gainesville",
+            "san-miguel-de-allende",
+            "bareilly",
+            "moradabad",
+            "kampala",
+            "cairo",
+            "campinas",
+            "quanzhou",
+            "shantou",
+            "kigali",
+            "brasilia",
+            "itapema",
+            "montanita"
+        ]
+    },
+    {
+        "cluster_id": 74,
+        "cities": [
+            "huaibei",
+            "huaian",
+            "dongying",
+            "chachapoyas",
+            "wenling",
+            "nukualofa",
+            "mashhad",
+            "iquique",
+            "wenzhou",
+            "puning",
+            "zhangjiagang",
+            "xiangyang"
+        ]
+    },
+    {
+        "cluster_id": 75,
+        "cities": [
+            "dahab",
+            "soweto",
+            "gaborone",
+            "bahawalpur",
+            "multan",
+            "isfahan",
+            "mosul",
+            "baghdad"
+        ]
+    },
+    {
+        "cluster_id": 76,
+        "cities": [
+            "boracay",
+            "dhaka",
+            "nouakchott",
+            "laayoune",
+            "jeddah"
+        ]
+    },
+    {
+        "cluster_id": 77,
+        "cities": [
+            "indio",
+            "cathedral-city",
+            "palm-desert"
+        ]
+    },
+    {
+        "cluster_id": 78,
+        "cities": [
+            "bansko",
+            "paphos",
+            "rabat",
+            "doha",
+            "sulaymaniyah",
+            "cavtat",
+            "haifa"
+        ]
+    },
+    {
+        "cluster_id": 79,
+        "cities": [
+            "ljubljana",
+            "groningen",
+            "quebec-city",
+            "nottingham",
+            "scranton",
+            "norfolk",
+            "jena",
+            "aurora",
+            "karlsruhe",
+            "bournemouth",
+            "bremen",
+            "reading",
+            "utica",
+            "hagen",
+            "bethlehem",
+            "reading-pa",
+            "springfield",
+            "bielefeld",
+            "bloomington-il",
+            "joliet",
+            "moncton",
+            "oshawa",
+            "aalborg",
+            "hannover",
+            "brampton",
+            "manchester-nh",
+            "champaign",
+            "beacon",
+            "nashua",
+            "york",
+            "chengdu",
+            "kassel",
+            "vineland",
+            "frederick",
+            "leeuwarden",
+            "schenectady",
+            "allentown",
+            "worcester",
+            "trieste",
+            "halifax",
+            "darmstadt"
+        ]
+    },
+    {
+        "cluster_id": 80,
+        "cities": [
+            "king-edward-point"
+        ]
+    },
+    {
+        "cluster_id": 81,
+        "cities": [
+            "las-vegas",
+            "boulder",
+            "flagstaff",
+            "oxnard"
+        ]
+    },
+    {
+        "cluster_id": 82,
+        "cities": [
+            "salt-lake-city",
+            "las-cruces",
+            "greeley",
+            "colorado-springs",
+            "rapid-city",
+            "carson-city",
+            "cheyenne",
+            "reno",
+            "logan",
+            "taos",
+            "cody",
+            "baotou",
+            "sparks"
+        ]
+    },
+    {
+        "cluster_id": 83,
+        "cities": [
+            "hanoi",
+            "baguio",
+            "johor-bahru",
+            "pai",
+            "surabaya",
+            "chiang-rai",
+            "ibadan",
+            "yogyakarta",
+            "surakarta",
+            "benin-city",
+            "brazzaville",
+            "kisangani",
+            "tegucigalpa",
+            "san-pedro-sula",
+            "bangui",
+            "naypyidaw",
+            "mandalay"
+        ]
+    },
+    {
+        "cluster_id": 84,
+        "cities": [
+            "mexico-city",
+            "belgrade",
+            "medellin",
+            "gdansk",
+            "lima",
+            "cuenca",
+            "antigua",
+            "aveiro",
+            "galapagos-islands",
+            "kosice",
+            "nuremberg",
+            "lake-balaton",
+            "sa-pa",
+            "kaesong",
+            "lviv"
+        ]
+    },
+    {
+        "cluster_id": 85,
+        "cities": [
+            "tromso",
+            "whistler",
+            "banff",
+            "centennial"
+        ]
+    },
+    {
+        "cluster_id": 86,
+        "cities": [
+            "ulyanovsk",
+            "izhevsk",
+            "ufa",
+            "omsk"
+        ]
+    },
+    {
+        "cluster_id": 87,
+        "cities": [
+            "jinan",
+            "mcleod-ganj",
+            "srinagar",
+            "handan",
+            "qinhuangdao",
+            "sialkot",
+            "chifeng"
+        ]
+    },
+    {
+        "cluster_id": 88,
+        "cities": [
+            "istanbul",
+            "varna",
+            "budapest",
+            "sofia",
+            "nis",
+            "pristina",
+            "port-elizabeth",
+            "tyler",
+            "guanajuato",
+            "kokomo",
+            "daejeon",
+            "cochabamba",
+            "suwon",
+            "cixi",
+            "baku",
+            "durban",
+            "podgorica",
+            "budva",
+            "beijing",
+            "shijiazhuang",
+            "qingdao",
+            "bar",
+            "montevideo",
+            "dalian",
+            "wuhan"
+        ]
+    },
+    {
+        "cluster_id": 89,
+        "cities": [
+            "jyvaskyla",
+            "barrie",
+            "obninsk",
+            "asmara",
+            "dnipro"
+        ]
+    },
+    {
+        "cluster_id": 90,
+        "cities": [
+            "phu-quoc",
+            "arugam-bay",
+            "ko-lanta",
+            "belem"
+        ]
+    },
+    {
+        "cluster_id": 91,
+        "cities": [
+            "johannesburg",
+            "hermosillo",
+            "laredo",
+            "arequipa",
+            "windhoek",
+            "livingstone",
+            "alanya",
+            "agadir",
+            "algiers",
+            "duhok",
+            "mexicali",
+            "riyadh"
+        ]
+    },
+    {
+        "cluster_id": 92,
+        "cities": [
+            "ramallah",
+            "yinchuan",
+            "xiangtan",
+            "islamabad",
+            "tripoli"
+        ]
+    },
+    {
+        "cluster_id": 93,
+        "cities": [
+            "queenstown",
+            "oslo",
+            "lake-tahoe",
+            "arendal",
+            "interlaken",
+            "nuuk"
+        ]
+    },
+    {
+        "cluster_id": 94,
+        "cities": [
+            "clarksville",
+            "rennes",
+            "mobile",
+            "leuven",
+            "port-st-lucie",
+            "lucca",
+            "basse-terre",
+            "cabarete",
+            "punta-cana"
+        ]
+    },
+    {
+        "cluster_id": 95,
+        "cities": [
+            "amarillo",
+            "lubbock",
+            "lincoln",
+            "grand-junction",
+            "bellevue",
+            "innsbruck",
+            "richland",
+            "menlo-park",
+            "monterey",
+            "alesund",
+            "kennewick",
+            "lake-charles"
+        ]
+    },
+    {
+        "cluster_id": 96,
+        "cities": [
+            "brisbane",
+            "cairns",
+            "wollongong",
+            "darwin",
+            "monrovia"
+        ]
+    },
+    {
+        "cluster_id": 97,
+        "cities": [
+            "jamshedpur",
+            "malappuram",
+            "guwahati",
+            "ko-tao",
+            "vang-vieng",
+            "maracaibo"
+        ]
+    },
+    {
+        "cluster_id": 98,
+        "cities": [
+            "scottsdale",
+            "torreon",
+            "constantine"
+        ]
+    },
+    {
+        "cluster_id": 99,
+        "cities": [
+            "frankfurt",
+            "leiden",
+            "birmingham",
+            "stuttgart",
+            "manchester",
+            "liverpool",
+            "virginia-beach",
+            "bridgeport",
+            "utrecht",
+            "breda",
+            "southampton",
+            "the-hague",
+            "antwerp",
+            "pisa",
+            "tilburg",
+            "scheveningen",
+            "zandvoort",
+            "dijon",
+            "padova",
+            "naples",
+            "genoa",
+            "treviso",
+            "trento",
+            "modena",
+            "turin"
+        ]
+    },
+    {
+        "cluster_id": 100,
+        "cities": [
+            "juarez",
+            "rawalpindi",
+            "lubumbashi",
+            "tabriz",
+            "hama",
+            "damascus",
+            "aleppo"
+        ]
+    },
+    {
+        "cluster_id": 101,
+        "cities": [
+            "amundsen-scott"
+        ]
+    },
+    {
+        "cluster_id": 102,
+        "cities": [
+            "seoul",
+            "nanjing",
+            "dortmund",
+            "avarua"
+        ]
+    },
+    {
+        "cluster_id": 103,
+        "cities": [
+            "hyderabad",
+            "goiania",
+            "dongguan",
+            "nanchang",
+            "shenzhen",
+            "liuzhou",
+            "uberlandia",
+            "nanning",
+            "banjul",
+            "zhuzhou",
+            "allahabad",
+            "chennai",
+            "anapolis",
+            "sharjah",
+            "xiamen",
+            "guilin",
+            "zhangzhou"
+        ]
+    },
+    {
+        "cluster_id": 104,
+        "cities": [
+            "phuket",
+            "singapore",
+            "tulum",
+            "manama",
+            "luanda",
+            "port-of-spain",
+            "kralendijk"
+        ]
+    },
+    {
+        "cluster_id": 105,
+        "cities": [
+            "cologne",
+            "chattanooga",
+            "huntsville",
+            "st-catharines",
+            "memphis",
+            "vina-del-mar",
+            "antofagasta",
+            "yangzhou",
+            "dusseldorf",
+            "yiwu",
+            "avellino",
+            "wuxi"
+        ]
+    },
+    {
+        "cluster_id": 106,
+        "cities": [
+            "harare",
+            "uluwatu",
+            "amman",
+            "kannur",
+            "toledo",
+            "javea",
+            "asansol"
+        ]
+    },
+    {
+        "cluster_id": 107,
+        "cities": [
+            "kota",
+            "aligarh",
+            "kaduna",
+            "oran",
+            "maseru"
+        ]
+    },
+    {
+        "cluster_id": 108,
+        "cities": [
+            "haikou",
+            "palawan",
+            "willemstad",
+            "santa-cruz",
+            "dededo"
+        ]
+    },
+    {
+        "cluster_id": 109,
+        "cities": [
+            "semarang",
+            "mombasa",
+            "udon-thani",
+            "kumasi",
+            "lome",
+            "conakry",
+            "yamoussoukro",
+            "freetown",
+            "kananga",
+            "copan"
+        ]
+    },
+    {
+        "cluster_id": 110,
+        "cities": [
+            "taghazout",
+            "gaziantep"
+        ]
+    },
+    {
+        "cluster_id": 111,
+        "cities": [
+            "kauai"
+        ]
+    },
+    {
+        "cluster_id": 112,
+        "cities": [
+            "victoria",
+            "nanaimo",
+            "changchun",
+            "boise",
+            "harbin",
+            "edmonton",
+            "ashgabat",
+            "vladivostok",
+            "volgograd"
+        ]
+    },
+    {
+        "cluster_id": 113,
+        "cities": [
+            "yerevan",
+            "minneapolis",
+            "tulsa",
+            "datong",
+            "ushuaia",
+            "kelowna",
+            "nagoya",
+            "santa-fe"
+        ]
+    },
+    {
+        "cluster_id": 114,
+        "cities": [
+            "palm-bay",
+            "san-juan",
+            "weston",
+            "bonita-springs",
+            "gold-coast",
+            "isla-mujeres"
+        ]
+    },
+    {
+        "cluster_id": 115,
+        "cities": [
+            "tel-aviv",
+            "detroit",
+            "sacramento",
+            "palo-alto",
+            "newport-beach",
+            "santa-rosa",
+            "oceanside",
+            "carlsbad",
+            "san-clemente",
+            "brentwood",
+            "midland",
+            "gibraltar",
+            "napa",
+            "galveston",
+            "santa-maria",
+            "jerusalem"
+        ]
+    },
+    {
+        "cluster_id": 116,
+        "cities": [
+            "amritsar",
+            "agra",
+            "raipur"
+        ]
+    },
+    {
+        "cluster_id": 117,
+        "cities": [
+            "baton-rouge",
+            "deventer",
+            "jamestown",
+            "huzhou",
+            "siena"
+        ]
+    },
+    {
+        "cluster_id": 118,
+        "cities": [
+            "lethbridge",
+            "albuquerque",
+            "venice",
+            "yokohama",
+            "hamamatsu"
+        ]
+    },
+    {
+        "cluster_id": 119,
+        "cities": [
+            "cheltenham",
+            "san-mateo",
+            "wanaka",
+            "rimini",
+            "amalfi"
+        ]
+    }
+]

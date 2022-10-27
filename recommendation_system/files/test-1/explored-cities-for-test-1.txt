@@ -1,0 +1,107 @@
+Analysis for phuket city:
+phuket's cluster contains the following cities:
+phuket
+singapore
+tulum
+manama
+luanda
+port-of-spain
+kralendijk
+
+Analysis for london city:
+london's cluster contains the following cities:
+berlin
+london
+munich
+hamburg
+prague
+vilnius
+melbourne
+copenhagen
+portland
+gothenburg
+leicester
+kitchener
+lille
+bristol
+leeds
+kyiv
+
+Analysis for florence city:
+florence's cluster contains the following cities:
+new-york-city
+honolulu
+miami
+rome
+florence
+monaco
+key-west
+ibiza
+abu-dhabi
+male
+
+Analysis for bangkok city:
+bangkok's cluster contains the following cities:
+bangkok
+gran-canaria
+seminyak
+cebu
+davao
+ho-chi-minh-city
+queretaro
+krabi
+luang-prabang
+jakarta
+colombo
+kota-kinabalu
+guangzhou
+la-union
+pattaya
+jimbaran
+tainan
+thrissur
+nagpur
+fortaleza
+khulna
+natal
+patna
+surat
+alexandria
+cozumel
+thane
+
+Analysis for dubai city:
+dubai's cluster contains the following cities:
+tampa
+dubai
+ocala
+wilmington
+daytona-beach
+bordeaux
+fort-myers
+orlando
+auburn
+melbourne-fl
+savannah
+columbus-ga
+sarasota
+tamarindo
+tallahassee
+road-town
+bari
+bridgetown
+philipsburg
+
+Analysis for paris city:
+paris's cluster contains the following cities:
+new-orleans
+nashville
+paris
+sliema
+hilo
+fort-lauderdale
+west-palm-beach
+san-sebastian
+mykonos
+vatican-city
+
