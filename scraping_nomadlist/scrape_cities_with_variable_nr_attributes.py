@@ -3,7 +3,7 @@
         The scope of this Python script is to extract from nomadlist.com the list of cities that have the features
         we want to test for clustering.
 
-        After analyzing all possible features that a city might hvae, using correlation, 3 potential lists of features
+        After analyzing all possible features that a city might have, using correlation, 3 potential lists of features
         for a city that enters in the clustering algorithm were chosen. For each list, using this script, we extract
         the cities with that attributes from nomadlist.com and create a Json file with them. Then for each Json file
         we test K-Means Clustering Alg.

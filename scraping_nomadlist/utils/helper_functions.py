@@ -82,6 +82,16 @@ def format_humidity(humidity_text):
     return new_humidity
 
 
+def convert_string_to_have_only_letters(string):
+    new_string = ''
+
+    for character in string:
+        if character.isalpha():
+            new_string += character
+
+    return new_string
+
+
 def read_data_from_json(file_path, city_features):
     with open(file_path) as js:
         loaded_json = json.load(js)
