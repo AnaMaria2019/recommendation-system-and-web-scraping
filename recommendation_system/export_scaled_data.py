@@ -18,8 +18,8 @@ import json
 
 from sklearn.preprocessing import MinMaxScaler
 
-from scraping_nomadlist.utils import helper_functions
-from scraping_nomadlist.utils.cities_wanted_features import all_features as city_features
+from utils import helper_functions
+from utils.cities_wanted_features import all_features as city_features
 
 
 if __name__ == '__main__':

@@ -12,9 +12,8 @@ import cloudscraper
 import json
 
 from bs4 import BeautifulSoup
-from scraping_nomadlist.utils.cities_wanted_features import all_features
-from scraping_nomadlist.utils import helper_functions
-
+from utils.cities_wanted_features import all_features
+from utils import helper_functions
 
 if __name__ == '__main__':
     data = []

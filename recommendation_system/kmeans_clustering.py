@@ -21,8 +21,8 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
-from scraping_nomadlist.utils.cities_wanted_features import selected_cities_features_3 as city_features
-from scraping_nomadlist.utils.helper_functions import read_data_from_json
+from utils.cities_wanted_features import selected_cities_features_3 as city_features
+from utils.helper_functions import read_data_from_json
 
 
 def find_best_nr_of_clusters(X, nr_clusters_to_be_tested):

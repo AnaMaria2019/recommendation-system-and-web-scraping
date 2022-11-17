@@ -31,7 +31,7 @@ import json
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-from scraping_nomadlist.utils import helper_functions
+from utils import helper_functions
 
 
 def retrieve_web_page(url, cooldown, browser_driver_path):

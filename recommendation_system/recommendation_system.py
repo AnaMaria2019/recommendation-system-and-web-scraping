@@ -2,7 +2,7 @@ import json
 import math
 import pandas as pd
 
-from scraping_nomadlist.utils.cities_wanted_features import selected_cities_features_3 as city_features
+from utils.cities_wanted_features import selected_cities_features_3 as city_features
 
 
 def read_scaled_data_from_json(file_path, features_names):

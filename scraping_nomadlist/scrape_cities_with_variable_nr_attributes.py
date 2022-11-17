@@ -20,9 +20,8 @@ import cloudscraper
 import json
 
 from bs4 import BeautifulSoup
-from scraping_nomadlist.utils.cities_wanted_features import selected_cities_features_1 as city_features
-from scraping_nomadlist.utils import helper_functions
-
+from utils.cities_wanted_features import selected_cities_features_1 as city_features
+from utils import helper_functions
 
 if __name__ == '__main__':
     if len(city_features) == 5:

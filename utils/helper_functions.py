@@ -92,6 +92,28 @@ def convert_string_to_have_only_letters(string):
     return new_string
 
 
+def convert_string_to_int(s):
+    n = 0
+    for c in s:
+        if c.isdigit():
+            n = n * 10 + int(c)
+        elif c == ',':
+            break
+
+    return n
+
+
+def convert_string_to_float(s):
+    new_string = ''
+    for c in s:
+        if c == ',':
+            new_string += '.'
+        else:
+            new_string += c
+
+    return float(new_string)
+
+
 def read_data_from_json(file_path, city_features):
     with open(file_path) as js:
         loaded_json = json.load(js)

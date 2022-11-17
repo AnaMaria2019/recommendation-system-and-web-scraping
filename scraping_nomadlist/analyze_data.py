@@ -11,8 +11,8 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from scraping_nomadlist.utils.cities_wanted_features import all_features as city_features
-from scraping_nomadlist.utils.helper_functions import read_data_from_json
+from utils.cities_wanted_features import all_features as city_features
+from utils.helper_functions import read_data_from_json
 
 
 def build_correlation_matrix(dataframe):
