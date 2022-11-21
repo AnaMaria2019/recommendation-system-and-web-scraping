@@ -62,14 +62,14 @@ def format_cost(string_cost):
     return new_cost
 
 
-def format_temperature(temp):
-    new_temp = 0
+def string_to_int(s):
+    n = 0
 
-    for c in temp:
+    for c in s:
         if c.isdigit():
-            new_temp = new_temp * 10 + int(c)
+            n = n * 10 + int(c)
 
-    return new_temp
+    return n
 
 
 def format_humidity(humidity_text):

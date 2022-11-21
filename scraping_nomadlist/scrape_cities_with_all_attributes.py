@@ -131,7 +131,7 @@ if __name__ == '__main__':
                     feature_name = 'temperature'
                     temperature_text = r.find('span', {'class': 'metric'}).get_text()
                     if temperature_text:
-                        temperature_value = helper_functions.format_temperature(temperature_text)
+                        temperature_value = helper_functions.string_to_int(temperature_text)
                         curr_city_features[feature_name] = temperature_value
                         print(f'{feature_name}: {temperature_value}')  # int
 
