@@ -1,7 +1,11 @@
 # RecSystem_and_WebScraping
 
-## Logic steps followed:
-<b>NOTE:</b> Below each step, the associated script in this repository is mentioned. 
+## Logic steps followed - building the Recommendation System:
+> **Note**
+> Below each step, the associated script in this repository is mentioned.</br>
+
+> **Note**
+> For each list of characteristics (mentioned [here](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/utils/cities_wanted_features.py)), the number of cities, that have those characteristics, along with the characteristics' values, found on [nomadlist.com](https://nomadlist.com/) might fluctuate because the website is constantly updating its information.
 
 1) Get all the cities from [nomadlist.com](https://nomadlist.com/) that have the <b>26 attributes</b> (you can find them in <i>[utils/cities_wanted_features.py](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/utils/cities_wanted_features.py)</i>) selected from the full list of 35 possible ones, and store them in a Json file</br>
 -- <i>[scraping_nomadlist/scrape_cities_with_all_attributes.py](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/scraping_nomadlist/scrape_cities_with_all_attributes.py)</i> -- 
@@ -18,6 +22,15 @@ NOTE: In the TravelApp application only the scaled values of the cities' charact
 -- <i>[recommendation_system/recommendation_system.py](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/recommendation_system/recommendation_system.py)</i> --
 7) Keep the list of cities' attributes that obtained the best shillouette score in the clusterization process (with the best clusterization: fixture-test-3.json) and add an <b>airport_code</b> and an <b>image</b> to each city (1339 total cities) (the airport code and the image will be later needed in the TravelApp) then create the <b>final-fixture.json</b> file that will be used later for populating the application's database in the TravelApp project</br>
 -- <i>[scrape_airportcode_and_create_final_fixture.py](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/scrape_airportcode_and_create_final_fixture.py)</i> --
+
+## Web scraping techniques for searching accommodation and flight
+The logic developed in the following scripts will be later used in the process of building the TravelApp project
+
+1) Finding accommodation for a given destination in a period of time for a number of persons and rooms</br>
+-- <i>[scraping_accommodation_and_flight/scrape_accommodation_on_booking.py](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/scraping_accommodation_and_flight/scrape_accommodation_on_booking.py)</i> --
+2) Finding best flight option for a given destination in a period of time</br>
+-- <i>[scraping_accommodation_and_flight/scrape_flight_on_momondo.py](https://github.com/AnaMaria2019/RecSystem_and_WebScraping/blob/master/scraping_accommodation_and_flight/scrape_flight_on_momondo.py)</i> --
+
 
 ## Getting started
 
