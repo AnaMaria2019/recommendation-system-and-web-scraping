@@ -30,8 +30,11 @@ def get_data_from_flight_container(flight_container):
 
 def get_airlines_names(flight_container):
     airlines = flight_container.find('span', {'class': 'codeshares-airline-names'}).get_text()
-    airlines_names = airlines.split(', ')
-    flight_1_airline, flight_2_airline = airlines_names[0], airlines_names[1]
+    if ',' in airlines:
+        airlines_names = airlines.split(', ')
+        flight_1_airline, flight_2_airline = airlines_names[0], airlines_names[1]
+    else:
+        flight_1_airline, flight_2_airline = airlines, airlines
 
     return flight_1_airline, flight_2_airline
 
@@ -67,8 +70,8 @@ if __name__ == '__main__':
     """ Retrieve the Web Page """
     from_airport = 'BUH'
     to_airport = 'MIL'
-    from_date = '2022-11-25'
-    to_date = '2022-11-27'
+    from_date = '2023-03-03'
+    to_date = '2023-03-05'
 
     # Check the given dates are valid, the following conditions must be fulfilled:
     # 1. start_date <= end_date
@@ -86,7 +89,7 @@ if __name__ == '__main__':
         executable_path='../geckodriver.exe'
     )
     driver.get(url)
-    time.sleep(10)
+    time.sleep(20)
 
     # Close pop-up window
     driver.find_element_by_xpath(
