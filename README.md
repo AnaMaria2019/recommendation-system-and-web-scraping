@@ -38,6 +38,7 @@ The logic developed in the following scripts will be later used in the process o
 
 * [Python 3.8.0](https://www.python.org/downloads/release/python-380/)
 * [Git](https://git-scm.com/downloads)
+* [FireFox Browser 76.0.1](https://www.mozilla.org/en-US/firefox/76.0/releasenotes/) - this version of browser was used with the FireFox driver in the web scraping processes
 
 ### Setup steps (on Windows operating system)
 
