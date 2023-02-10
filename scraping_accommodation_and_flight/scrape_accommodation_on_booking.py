@@ -110,7 +110,7 @@ if __name__ == '__main__':
     destination_input = driver.find_element_by_xpath("//input[contains(@name, 'ss')]")
     # Add the destination in the input.
     destination_input.send_keys(destination)
-    time.sleep(2)
+    time.sleep(5)
 
     """ Select check-in and check-out dates """
     # Find the input for entering the dates for check-in and check-out

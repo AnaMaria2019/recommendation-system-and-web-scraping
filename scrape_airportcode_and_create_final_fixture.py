@@ -75,7 +75,7 @@ def add_airport_code_and_image_path_to_cities(cities_data, airports):
 
         current_city_info['city_code'] = airports[current_city_name]
         if 'image' not in current_city_info or current_city_info['image'] == '':
-            current_city_info['image'] = '/media/' + current_city_name + '.jpg'
+            current_city_info['image'] = current_city_name + '.jpg'
 
     return cities_data
 
