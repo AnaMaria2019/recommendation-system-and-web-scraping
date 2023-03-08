@@ -49,6 +49,7 @@ def get_clustering_information(file_clusters_path, file_cities_info_path):
             current_city_name = current_dict['city']
             current_city_cluster_id = current_dict['id_cluster']
 
+            # NOTE: Rename to cluster_of_city
             city_in_cluster[current_city_name] = current_city_cluster_id
 
     return clusters_info, city_in_cluster
